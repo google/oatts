@@ -3,21 +3,18 @@
 > Generate basic unit test scaffolding for your [Open API specification](https://www.openapis.org/).
 
 ## Disclaimer
----
 
 `oatts` is based off of the [swagger-test-templates](https://github.com/apigee-127/swagger-test-templates) module and the lessons learned during its development.
 
 _This is a work in progress._
 
 ## Goal
----
 
 The goal of `oatts` is to provide a standalone module for generating Node.js unit test code scaffolding based on a given Open API document.
 
 The hope is that by providing such a tool, API developers will be encouraged to test the contract between their spec and backend early, often and continuously as the project grows.
 
 ## Usage
----
 
 There are a couple ways to use `oatts`.
 
@@ -72,7 +69,6 @@ pet-test.js  pet-{petId}-uploadImage-test.js  user-test.js
 ```
 
 ## Options
----
 
 The following options can be passed to the generation function, some/all are exposed in the accompanying CLI:
 
@@ -85,18 +81,15 @@ The following options can be passed to the generation function, some/all are exp
 | `writeTo` | `--writeTo -w` | n/a | `false` | Directory to write generated tests to; will create the directory if it doesn't exist |
 
 ## Testing
----
 
 To test this module simply use the `npm` script
 
     npm test
 
 ## Contributing
----
 
 Contributors are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
----
 
 See [LICENSE](LICENSE) file.
