@@ -1,0 +1,28 @@
+{
+  "name": "oatts",
+  "version": "1.0.0",
+  "description": "An Open API Test Template Generator",
+  "main": "index.js",
+  "bin": {
+    "oatts": "./bin/cli.js"
+  },
+  "scripts": {
+    "gen-docs": "./node_modules/.bin/jsdoc -c jsdoc.config.json .",
+    "test": "mocha --recursive"
+  },
+  "author": "Noah Dietz",
+  "license": "Apache 2.0",
+  "dependencies": {
+    "chakram": "^1.5.0",
+    "commander": "^2.9.0",
+    "handlebars": "^4.0.6",
+    "sanitize-filename": "^1.6.1",
+    "sway": "^1.0.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "ink-docstrap": "^1.3.0",
+    "jsdoc": "^3.4.3",
+    "mocha": "^3.2.0"
+  }
+}

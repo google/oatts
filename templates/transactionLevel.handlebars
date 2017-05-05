@@ -1,0 +1,21 @@
+it('{{testLevelDescription}}', function() {
+            var response = request('{{op}}', '{{schemes.[0]}}://{{host}}{{path}}', {
+                {{#if (notEmptyObject query)}}
+                'qs': {{json query}},{{/if}}{{#if (notEmptyObject body)}}
+                'body': {{json body}},{{/if}}{{#if (notEmptyObject formData)}}
+                'formData': {{json formData}},{{/if}}
+                'time': true
+            });
+
+            {{#if (isNotDefaultStatusCode expected.statusCode)}}
+            expect(response).to.have.status({{expected.statusCode}})
+            {{/if}}
+            {{#if expected.res}}
+            {{#if hasSamples}}
+            expect(response).to.comprise.of.json({{json expected.res}}); // just samples, might need replacing
+            {{else}}
+            expect(response).to.have.schema({{json expected.res}});
+            {{/if}}
+            {{/if}}
+            return chakram.wait();
+        });

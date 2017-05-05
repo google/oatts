@@ -1,0 +1,14 @@
+{
+    "source": {
+        "exclude": ["./node_modules", "./test", "./templates", "./doc"]
+    },
+    "opts": {
+        "destination": "./doc",
+        "readme": "./README.md",
+        "recurse": true,
+        "template": "./node_modules/ink-docstrap/template"
+    },
+    "templates": {
+        "theme": "paper"
+    }
+}
