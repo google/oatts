@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Documentation Index</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.paper.css">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top ">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html">Documentation</a>
+		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+        </button>
+	</div>
+	<div class="navbar-collapse collapse" id="topNavigation">
+		<ul class="nav navbar-nav">
+			
+			<li class="dropdown">
+				<a href="namespaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Namespaces<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="compilation.html">compilation</a></li><li><a href="processing.html">processing</a></li><li><a href="templateHelpers.html">templateHelpers</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="global.html">generate</a></li>
+				</ul>
+			</li>
+			
+		</ul>
+        
+            <div class="col-sm-3 col-md-3">
+                <form class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        
+	</div>
+
+</div>
+</div>
+
+
+<div class="container" id="toc-content">
+<div class="row">
+
+	
+	<div class="col-md-8">
+	
+		<div id="main">
+			
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+    <section class="readme-section">
+        <article><h1>Open API Test Templates (oatts)</h1><blockquote>
+<p>Generate basic unit test scaffolding for your <a href="https://www.openapis.org/">Open API specification</a>.</p>
+</blockquote>
+<h2>Disclaimer</h2><p><code>oatts</code> is based off of the <a href="https://github.com/apigee-127/swagger-test-templates">swagger-test-templates</a> module and the lessons learned during its development.</p>
+<p><em>This is a work in progress.</em></p>
+<h2>Goal</h2><p>The goal of <code>oatts</code> is to provide a standalone module for generating Node.js unit test code scaffolding based on a given Open API document.</p>
+<p>The hope is that by providing such a tool, API developers will be encouraged to test the contract between their spec and backend early, often and continuously as the project grows.</p>
+<h2>Usage</h2><p>There are a couple ways to use <code>oatts</code>.</p>
+<h3>Module</h3><p>Install via <code>npm</code></p>
+<pre class="prettyprint source"><code>npm install --save oatts</code></pre><p>Then use it in code</p>
+<pre class="prettyprint source lang-js"><code>var oatts = require('oatts');
+
+var options = {
+    // see &quot;Options&quot; section below for available options
+};
+
+var tests = oatts.generate('/path/to/openapi.yaml', options);
+
+console.log(tests)</code></pre><h3>Command line interface</h3><p>Install globally via <code>npm</code></p>
+<pre class="prettyprint source"><code>npm install -g oatts</code></pre><p>Then use in your command line</p>
+<pre class="prettyprint source lang-sh"><code>> oatts generate --help
+
+  Usage: generate [options]
+
+  generate unit test scaffolding for a given OpenAPI/Swagger spec
+
+  Options:
+
+    -h, --help               output usage information
+    --host &lt;host>            target hostname to use in test generation
+    -p, --paths &lt;paths>      comma separated list of paths to generate tests for
+    -e, --sample             generate sample response bodies rather than schema, if applicable
+    -s, --spec &lt;spec>        path to the target OpenAPI/Swagger spec document to consume
+    -w, --writeTo &lt;writeTo>  directory to write the generated tests to file
+
+> oatts generate -s ./path/to/openapi.yaml -w ./output/dir
+> ls ./output/dir
+pet-test.js  pet-{petId}-uploadImage-test.js  user-test.js 
+. . .</code></pre><h2>Options</h2><p>The following options can be passed to the generation function, some/all are exposed in the accompanying CLI:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th style="text-align:center">CLI Flag</th>
+<th style="text-align:right">Default</th>
+<th style="text-align:right">Required</th>
+<th style="text-align:right">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>spec</code></td>
+<td style="text-align:center"><code>--spec -s</code></td>
+<td style="text-align:right">n/a</td>
+<td style="text-align:right"><code>true</code></td>
+<td style="text-align:right">Path to a <code>swagger.yaml</code> or <code>openapi.yaml</code></td>
+</tr>
+<tr>
+<td><code>host</code></td>
+<td style="text-align:center"><code>--host</code></td>
+<td style="text-align:right"><code>spec.host</code></td>
+<td style="text-align:right"><code>false</code></td>
+<td style="text-align:right">Hostname to put in test requests; defaults to <code>host</code> in given spec</td>
+</tr>
+<tr>
+<td><code>paths</code></td>
+<td style="text-align:center"><code>--paths -p</code></td>
+<td style="text-align:right"><code>spec.paths</code></td>
+<td style="text-align:right"><code>false</code></td>
+<td style="text-align:right">API paths to generate tests for; defaults to all paths in given spec</td>
+</tr>
+<tr>
+<td><code>sample</code></td>
+<td style="text-align:center"><code>--sample -e</code></td>
+<td style="text-align:right"><code>false</code></td>
+<td style="text-align:right"><code>false</code></td>
+<td style="text-align:right">Toggle generating sample responses for assertion; <strong>only in the CLI</strong></td>
+</tr>
+<tr>
+<td><code>writeTo</code></td>
+<td style="text-align:center"><code>--writeTo -w</code></td>
+<td style="text-align:right">n/a</td>
+<td style="text-align:right"><code>false</code></td>
+<td style="text-align:right">Directory to write generated tests to; will create the directory if it doesn't exist</td>
+</tr>
+</tbody>
+</table>
+<h2>Testing</h2><p>To test this module simply use the <code>npm</code> script</p>
+<pre class="prettyprint source"><code>npm test</code></pre><h2>Contributing</h2><p>Contributors are welcome! Please see <a href="CONTRIBUTING.md">CONTRIBUTING.md</a>.</p>
+<h2>License</h2><p>See <a href="LICENSE">LICENSE</a> file.</p></article>
+    </section>
+
+
+
+
+
+
+
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+
+	
+		<div class="col-md-3">
+			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
+		</div>
+	
+
+</div>
+</div>
+
+
+    <div class="modal fade" id="searchResults">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Search results</h4>
+          </div>
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+
+
+<footer>
+
+
+<span class="jsdoc-message">
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a>
+	
+		on 2017-05-05T14:25:53-07:00
+	
+	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
+</span>
+</footer>
+
+<script src="scripts/docstrap.lib.js"></script>
+<script src="scripts/toc.js"></script>
+
+    <script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
+
+
+<script>
+$( function () {
+	$( "[id*='$']" ).each( function () {
+		var $this = $( this );
+
+		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+	} );
+
+	$( ".tutorial-section pre, .readme-section pre, pre.prettyprint.source" ).each( function () {
+		var $this = $( this );
+
+		var example = $this.find( "code" );
+		exampleText = example.html();
+		var lang = /{@lang (.*?)}/.exec( exampleText );
+		if ( lang && lang[1] ) {
+			exampleText = exampleText.replace( lang[0], "" );
+			example.html( exampleText );
+			lang = lang[1];
+		} else {
+			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
+			lang = langClassMatch ? langClassMatch[1] : "javascript";
+		}
+
+		if ( lang ) {
+
+			$this
+			.addClass( "sunlight-highlight-" + lang )
+			.addClass( "linenums" )
+			.html( example.html() );
+
+		}
+	} );
+
+	Sunlight.highlightAll( {
+		lineNumbers : false,
+		showMenu : true,
+		enableDoclinks : true
+	} );
+
+	$.catchAnchorLinks( {
+        navbarOffset: 10
+	} );
+	$( "#toc" ).toc( {
+		anchorName  : function ( i, heading, prefix ) {
+			return $( heading ).attr( "id" ) || ( prefix + i );
+		},
+		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
+		showAndHide : false,
+		smoothScrolling: true
+	} );
+
+	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+	$( '.dropdown-toggle' ).dropdown();
+
+    $( "table" ).each( function () {
+      var $this = $( this );
+      $this.addClass('table');
+    } );
+
+} );
+</script>
+
+
+
+<!--Navigation and Symbol Display-->
+
+
+<!--Google Analytics-->
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            SearcherDisplay.init();
+        });
+    </script>
+
+
+</body>
+</html>
