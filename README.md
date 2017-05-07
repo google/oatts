@@ -88,8 +88,8 @@ To test this module simply use the `npm` script
 
 ## Contributing
 
-Contributors are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md).
+Contributors are welcome! Please see [CONTRIBUTING.md](https://github.com/noahdietz/oatts/blob/master/CONTRIBUTING.md).
 
 ## License
 
-See [LICENSE](LICENSE) file.
+See [LICENSE](https://github.com/noahdietz/oatts/blob/master/LICENSE) file.
