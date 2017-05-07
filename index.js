@@ -25,12 +25,18 @@ module.exports = {
 }
 
 /**
+ * GenerationResults is the final result of the generation function
+ * @typedef {object} GenerationResults
+ * @property {compilation.GeneratedTest[]} generated set of generated test objects
+ */
+
+/**
  * Generates test artifacts based on the given API Spec and options
  * @function generate
  * @instance
  * @param {string} specPath path to the API spec document
  * @param {object} options options to apply during processing of API spec
- * @return {compilation.GeneratedTest[]}
+ * @return {Promise<GenerationResults>}
  */
 function generate(specPath, options) {
     return sway.create({'definition': specPath})
@@ -52,7 +58,7 @@ function generate(specPath, options) {
                 })
             }
 
-            return compiled
+            return { 'generated': compiled }
         }, function (err) {
             console.error(err.stack);
             return err

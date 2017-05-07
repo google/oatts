@@ -30,13 +30,18 @@ cli.command('generate')
     .option('-s, --spec <spec>', 'path to the target OpenAPI/Swagger spec document to consume')
     .option('-w, --writeTo <writeTo>', 'directory to write the generated tests to file')
     .action(function(options)  {
-        options.error = util.optionError
-        if (!options.spec) { return  options.error('spec path is required') }
+        options.error = util.optionError;
+        if (!options.spec) { return  options.error('spec path is required'); }
         
-        var generated = oatts.generate(options.spec, options)
-        if (options.writeTo === undefined) {
-            console.log(generated)
-        }
+        var generated = oatts.generate(options.spec, options);
+        generated.then(function(gen){
+            if (options.writeTo === undefined) {
+                console.log(gen)
+            }
+        },
+        function(err) {
+            console.error(err)
+        });
     });
 
 cli.parse(process.argv);
