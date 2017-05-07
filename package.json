@@ -13,7 +13,6 @@
   "author": "Noah Dietz",
   "license": "Apache 2.0",
   "dependencies": {
-    "chakram": "^1.5.0",
     "commander": "^2.9.0",
     "handlebars": "^4.0.6",
     "sanitize-filename": "^1.6.1",
