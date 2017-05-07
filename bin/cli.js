@@ -26,7 +26,7 @@ cli.command('generate')
     .description('generate unit test scaffolding for a given OpenAPI/Swagger Spec')
     .option('--host <host>', 'target hostname to use in test generation')
     .option('-p, --paths <paths>', 'comma separated list of paths to generate tests for', util.paths)
-    .option('-e, --sample', 'generate sample response bodies rather than schema, if applicable')
+    .option('-e, --samples', 'generate sample response bodies rather than schema, if applicable')
     .option('-s, --spec <spec>', 'path to the target OpenAPI/Swagger spec document to consume')
     .option('-w, --writeTo <writeTo>', 'directory to write the generated tests to file')
     .action(function(options)  {

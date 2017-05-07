@@ -77,7 +77,7 @@ The following options can be passed to the generation function, some/all are exp
 | `spec` | `--spec -s` | n/a | `true` | Path to a `swagger.yaml` or `openapi.yaml` |
 | `host` | `--host` | `spec.host` | `false` | Hostname to put in test requests; defaults to `host` in given spec |
 | `paths` | `--paths -p` | `spec.paths` | `false` | API paths to generate tests for; defaults to all paths in given spec |
-| `sample` | `--sample -e` | `false` | `false` | Toggle generating sample responses for assertion; **only in the CLI** |
+| `samples` | `--samples -e` | `false` | `false` | Toggle generating sample responses for assertion |
 | `writeTo` | `--writeTo -w` | n/a | `false` | Directory to write generated tests to; will create the directory if it doesn't exist |
 
 ## Testing
