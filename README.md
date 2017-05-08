@@ -1,6 +1,6 @@
-# Open API Test Templates (oatts)
+# OpenAPI Test Templates (oatts)
 
-> Generate basic unit test scaffolding for your [Open API specification](https://www.openapis.org/).
+> Generate basic unit test scaffolding for your [OpenAPI specification](https://www.openapis.org/).
 
 ## Disclaimer
 
@@ -10,7 +10,7 @@ _This is a work in progress._
 
 ## Goal
 
-The goal of `oatts` is to provide a standalone module for generating Node.js unit test code scaffolding based on a given Open API document.
+The goal of `oatts` is to provide a standalone module for generating Node.js unit test code scaffolding based on a given OpenAPI specification.
 
 The hope is that by providing such a tool, API developers will be encouraged to test the contract between their spec and backend early, often and continuously as the project grows.
 
