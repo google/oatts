@@ -27,6 +27,24 @@ Push to your fork and [submit a pull request][pr].
 
 [pr]: https://github.com/noahdietz/oatts/compare/
 
+If the change...
+
+* introduces a new type
+* changes the definition of an existing type
+* adds a new function
+* changes the signature of an existing function 
+* adds a new local module
+
+...please add/update the appropriate [jsdoc] comments.
+
+[jsdoc]: http://usejsdoc.org/
+
+Following passing the tests and committing the change, regrenerate the docs:
+
+    npm run gen-docs
+
+Commit the changes to `docs/` as a **separate commit.**
+
 At this point you're waiting on us. I will try to at least comment on the pull request as quickly as possible.
 We may suggest some changes or improvements or alternatives.
 
