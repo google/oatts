@@ -21,23 +21,31 @@ var fullProcessed = require('./documents/fullProcessed.json')
 describe('compile', function() {
     describe('no options', function() {
         it ('should compile all processed correctly', function(done) {
-            var tests = compile(fullProcessed, {})
+            try {
+                var tests = compile(fullProcessed, {})
             
-            expect(tests).to.not.be.null
-            tests.forEach(function(test, ndx, arr) {
-                expect(test).to.have.property('filename')
-                expect(test).to.have.property('contents')
-            });
+                expect(tests).to.not.be.null
+                tests.forEach(function(test, ndx, arr) {
+                    expect(test).to.have.property('filename')
+                    expect(test).to.have.property('contents')
+                });
 
-            done()
+                done()
+            } catch(err) {
+                done(err)
+            }
         })
 
         it ('should return null', function(done) {
-            var tests = compile({'tests': []}, {})
-            
-            expect(tests).to.be.null
+            try {
+                var tests = compile({'tests': []}, {})
+                
+                expect(tests).to.be.null
 
-            done()
+                done()
+            } catch(err) {
+                done(err)
+            }
         })
     })
 })
