@@ -1,0 +1,40 @@
+{
+    "headers": {
+        "GlobalShow": "global",
+        "PathOverride": "global",
+        "OpOverrideFromGlobal": "global",
+        "StatusCodeOverrideFromGlobal": "global"
+    },
+    "/pet/findByStatus": {
+        "headers":{
+            "PathShow": "path",
+            "PathOverride": "path",
+            "OpOverrideFromPath": "path",
+            "StatusCodeOverrideFromPath": "path"
+        },
+        "get": {
+            "headers": {
+                "OpShow": "op",
+                "OpOverrideFromGlobal": "op",
+                "OpOverrideFromPath": "op",
+                "StatusCodeOverrideFromOp": "op"
+            },
+            "200": {
+                "headers": {
+                    "StatusCodeShow": "statusCode",
+                    "StatusCodeOverrideFromGlobal": "statusCode",
+                    "StatusCodeOverrideFromPath": "statusCode",
+                    "StatusCodeOverrideFromOp": "statusCode"
+                }
+            },
+            "400": {
+                "headers": {
+                    "StatusCodeShow": "statusCode",
+                    "StatusCodeOverrideFromGlobal": "statusCode",
+                    "StatusCodeOverrideFromPath": "statusCode",
+                    "StatusCodeOverrideFromOp": "statusCode"
+                }
+            }
+        }
+    }
+}

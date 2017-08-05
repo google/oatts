@@ -19,6 +19,7 @@ var compile = require('./lib/compile.js')
 var sway = require('sway')
 var fs = require('fs')
 var join = require('path').join
+var merge2 = require('./lib/util').merge2
 
 module.exports = {
     generate: generate
@@ -41,6 +42,15 @@ module.exports = {
 function generate(specPath, options) {
     return sway.create({'definition': specPath})
         .then(function (api) {
+            if (options.customValues) {
+                options.customValues = JSON.parse(options.customValues);
+            }
+
+            if (options.customValuesFile) {
+                var customFromFile = require(join(process.cwd(), options.customValuesFile))
+                options.customValues = merge2(options.customValues, customFromFile)
+            }
+
             var processed = process(api, options)
             var compiled = compile(processed, options)
 

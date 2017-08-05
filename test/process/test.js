@@ -28,7 +28,7 @@ describe('process', function() {
                 var data = process(api, {})
                 expect(data).to.not.be.null
                 expect(data.host).to.equal("petstore.swagger.io", "host property did not match the spec")
-                expect(data.schemes).to.not.be.empty
+                expect(data.schemes).to.not.equal("")
                 expect(data.tests).to.not.be.empty
                 done()
             }, function (err) {
@@ -44,8 +44,7 @@ describe('process', function() {
                 var data = process(api, {'paths': ['/pet']})
                 expect(data).to.not.be.null
                 expect(data.host).to.equal("petstore.swagger.io", "host property did not match the spec")
-                expect(data.schemes).to.not.be.empty
-                expect(data.schemes[0]).to.equal("http", "expected schemes to be http but it was: " + data.schemes[0])
+                expect(data.schemes).to.not.equal("")
                 expect(data.consumes).to.be.empty
                 expect(data.tests.length).to.equal(1, "returned tests set was expected to have 1 item, but it had " + data.tests.length)
                 done()
@@ -61,7 +60,7 @@ describe('process', function() {
                 var data = process(api, {'host': optionHost})
                 expect(data).to.not.be.null
                 expect(data.host).to.equal(optionHost, "generated host property expected to be " + optionHost + " but was " + data.host)
-                expect(data.schemes).to.not.be.empty
+                expect(data.schemes).to.not.equal("")
                 expect(data.tests).to.not.be.empty
                 done()
             }, function (err) {
@@ -72,11 +71,64 @@ describe('process', function() {
         it('should process \'/pet/{petId}\' & \'/pet\' with option.samples active correctly', function(done) {
             sway.create({'definition': specPath})
             .then(function (api) {
-                var data = process(api, {'samples': true, 'paths': ['/pet/{petId}']})
+                var data = process(api, {'samples': true, 'paths': ['/pet', '/pet/{petId}']})
                 expect(data).to.not.be.null
                 expect(data.host).to.equal("petstore.swagger.io", "host property did not match the spec")
-                expect(data.schemes).to.not.be.empty
+                expect(data.schemes).to.not.equal("")
+                expect(data.tests.length).to.equal(2)
+                done()
+            }, function (err) {
+                done(err)
+            });
+        })
+
+        it ('should process \'/pet\' with first operation consumes/produces', function(done) {
+            sway.create({'definition': specPath})
+            .then(function (api) {
+                var data = process(api, {'samples': true, 'paths': ['/pet']})
+                expect(data).to.not.be.null
+                expect(data.host).to.equal("petstore.swagger.io", "host property did not match the spec")
+                expect(data.scheme).to.equal("http")
                 expect(data.tests).to.not.be.empty
+                expect(data.tests[0].operations[0].transactions[0].headers['Content-Type']).to.equal('application/json')
+                expect(data.tests[0].operations[0].transactions[0].headers['Accept']).to.equal('application/xml')
+                done()
+            }, function (err) {
+                done(err)
+            });
+        })
+
+        it('should process \'/pet/findByStatus\' correctly with customValues.headers from a file', function(done) {
+            var expectedHeaders = { 
+                GlobalShow: 'global',
+                PathOverride: 'path',
+                OpOverrideFromGlobal: 'op',
+                PathShow: 'path',
+                OpOverrideFromPath: 'op',
+                OpShow: 'op',
+                Accept: 'application/xml',
+                StatusCodeShow: "statusCode",
+                StatusCodeOverrideFromGlobal: "statusCode",
+                StatusCodeOverrideFromPath: "statusCode",
+                StatusCodeOverrideFromOp: "statusCode"
+            }
+
+            sway.create({'definition': specPath})
+            .then(function (api) {
+                var customVals = require('./documents/customValuesTest.json')
+                var data = process(api, {
+                    'customValues': customVals,
+                    'paths': ['/pet/findByStatus']
+                })
+
+                expect(data).to.not.be.null
+                expect(data.host).to.equal("petstore.swagger.io", "host property did not match the spec")
+                expect(data.schemes).to.not.equal("")
+                expect(data.tests).to.not.be.empty
+                data.tests[0].operations[0].transactions.forEach(function(item, ndx, arr) {
+                    expect(item.headers).to.deep.equal(expectedHeaders)
+                })
+
                 done()
             }, function (err) {
                 done(err)

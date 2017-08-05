@@ -51,16 +51,21 @@ Then use in your command line
 
   Usage: generate [options]
 
-  generate unit test scaffolding for a given OpenAPI/Swagger spec
+  generate unit test scaffolding for a given OpenAPI/Swagger Spec
 
   Options:
 
-    -h, --help               output usage information
-    --host <host>            target hostname to use in test generation
-    -p, --paths <paths>      comma separated list of paths to generate tests for
-    -e, --sample             generate sample response bodies rather than schema, if applicable
-    -s, --spec <spec>        path to the target OpenAPI/Swagger spec document to consume
-    -w, --writeTo <writeTo>  directory to write the generated tests to file
+    -h, --help                             output usage information
+    --host <host>                          target hostname to use in test generation
+    -p, --paths <paths>                    comma separated list of paths to generate tests for
+    -e, --samples                          generate sample response bodies rather than schema, if applicable
+    -s, --spec <spec>                      path to the target OpenAPI/Swagger spec document to consume
+    -w, --writeTo <writeTo>                directory to write the generated tests to file
+    -c, --consumes <consumes>              consumes/content-type to use in request when applicable to the API resource
+    -o, --produces <produces>              produces/accept to use in request when applicable to the API resource
+    -u, --customValues <customValues>      custom request values to be used in generation; takes precedent over a customValuesFile
+    --customValuesFile <customValuesFile>  path to JSON file with custom request values to be used in generation
+    -m, --scheme <scheme>                  which scheme to use if multiple are present in spec
 
 > oatts generate -s ./path/to/openapi.yaml -w ./output/dir
 > ls ./output/dir
@@ -79,6 +84,11 @@ The following options can be passed to the generation function, some/all are exp
 | `paths` | `--paths -p` | `spec.paths` | `false` | API paths to generate tests for; defaults to all paths in given spec |
 | `samples` | `--samples -e` | `false` | `false` | Toggle generating sample responses for assertion |
 | `writeTo` | `--writeTo -w` | n/a | `false` | Directory to write generated tests to; will create the directory if it doesn't exist |
+| `consumes` | `--consumes -c` | `operation.consumes[0]` &#124; &#124; `spec.conumes[0]` | `false` | Consumes header to use in a request when applicable | 
+| `produces` | `--produces -o` | `operation.produces[0]` &#124; &#124; `spec.produces[0]` | `false` | Produces header to use in a request when applicable |
+| `customValues` | `--customValues -u` | n/a | `false` | Values to be populated in requests where specified; overrides `customValuesFile` |
+| `customValuesFile` | `--customValuesFile` | n/a | `false` | Path to a JSON file with values to populate in requests |
+| `scheme` | `--scheme -m` | `spec.schemes[0]` | `false` | Override for multiple scheme present in a spec |
 
 ## Testing
 

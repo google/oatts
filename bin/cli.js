@@ -15,9 +15,10 @@
 // limitations under the License.
 
 'use strict';
+var cli = require('commander')
 var oatts = require('../index')
 var util = require('./util')
-var cli = require('commander')
+var join = require('path').join;
 
 cli.version(require('../package.json').version)
     .usage('<subcommand>')
@@ -29,6 +30,11 @@ cli.command('generate')
     .option('-e, --samples', 'generate sample response bodies rather than schema, if applicable')
     .option('-s, --spec <spec>', 'path to the target OpenAPI/Swagger spec document to consume')
     .option('-w, --writeTo <writeTo>', 'directory to write the generated tests to file')
+    .option('-c, --consumes <consumes>', 'consumes/content-type to use in request when applicable to the API resource')
+    .option('-o, --produces <produces>', 'produces/accept to use in request when applicable to the API resource')
+    .option('-u, --customValues <customValues>', 'custom request values to be used in generation; takes precedent over a customValuesFile')
+    .option('--customValuesFile <customValuesFile>', 'path to JSON file with custom request values to be used in generation')
+    .option('-m, --scheme <scheme>', 'which scheme to use if multiple are present in spec')
     .action(function(options)  {
         options.error = util.optionError;
         if (!options.spec) { return  options.error('spec path is required'); }

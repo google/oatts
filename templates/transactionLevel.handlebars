@@ -1,9 +1,9 @@
 it('{{testLevelDescription}}', function() {
-            var response = request('{{op}}', '{{schemes.[0]}}://{{host}}{{path}}', {
-                {{#if (notEmptyObject query)}}
+            var response = request('{{op}}', '{{scheme}}://{{host}}{{path}}', { {{#if (notEmptyObject query)}}
                 'qs': {{json query}},{{/if}}{{#if (notEmptyObject body)}}
                 'body': {{json body}},{{/if}}{{#if (notEmptyObject formData)}}
-                'formData': {{json formData}},{{/if}}
+                'formData': {{json formData}},{{/if}}{{#if (notEmptyObject headers)}}
+                'headers': {{json headers}},{{/if}}
                 'time': true
             });
 
