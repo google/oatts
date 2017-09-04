@@ -51,6 +51,8 @@ paths:
         schema:
           $ref: "#/definitions/Pet"
       responses:
+        201:
+          description: "Successfully added pet"
         405:
           description: "Invalid input"
     put:

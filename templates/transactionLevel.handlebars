@@ -11,8 +11,8 @@ it('{{testLevelDescription}}', function() {
             expect(response).to.have.status({{expected.statusCode}})
             {{/if}}
             {{#if expected.res}}
-            {{#if hasSamples}}
-            expect(response).to.comprise.of.json({{json expected.res}}); // just samples, might need replacing
+            {{#if hasValue}}
+            expect(response).to.comprise.of.json({{json expected.res}});
             {{else}}
             expect(response).to.have.schema({{json expected.res}});
             {{/if}}

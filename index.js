@@ -14,7 +14,7 @@
 
 'use strict';
 
-var process = require('./lib/process.js')
+var proc = require('./lib/process.js')
 var compile = require('./lib/compile.js')
 var sway = require('sway')
 var fs = require('fs')
@@ -45,13 +45,13 @@ function generate(specPath, options) {
             if (options.customValues) {
                 options.customValues = JSON.parse(options.customValues);
             }
-
+            
             if (options.customValuesFile) {
                 var customFromFile = require(join(process.cwd(), options.customValuesFile))
                 options.customValues = merge2(options.customValues, customFromFile)
             }
 
-            var processed = process(api, options)
+            var processed = proc(api, options)
             var compiled = compile(processed, options)
 
             if (options.writeTo !== undefined) {

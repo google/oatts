@@ -103,7 +103,7 @@ describe('process', function() {
             }
         })
 
-        it('should process \'/pet/findByStatus\' correctly with customValues.headers from a file', function(done) {
+        it('should process \'/pet/findByStatus\' correctly with customValues headers, query param, & response body', function(done) {
             var expectedHeaders = { 
                 GlobalShow: 'global',
                 PathOverride: 'path',
@@ -132,6 +132,68 @@ describe('process', function() {
                 data.tests[0].operations[0].transactions.forEach(function(item, ndx, arr) {
                     expect(item.headers).to.deep.equal(expectedHeaders)
                 })
+
+                expect(data.tests[0].operations[0].transactions[0].query).to.deep.equal(customVals['/pet/findByStatus']['get']['200']['query'])
+                expect(data.tests[0].operations[0].transactions[0].expected.res).to.deep.equal(customVals['/pet/findByStatus']['get']['200']['response'])
+                expect(data.tests[0].operations[0].transactions[1].query).to.deep.equal(customVals['/pet/findByStatus']['get']['query'])
+
+                done()
+            } catch(err) {
+                done(err)
+            }
+        })
+
+        it('should process \'/pet\' correctly with custom body params from a file', function(done) {
+            try {
+                var customVals = require('./documents/customValuesTest.json')
+                var data = process(api, {
+                    'customValues': customVals,
+                    'paths': ['/pet']
+                })
+
+                expect(data).to.not.be.null
+                expect(data.host).to.equal("petstore.swagger.io", "host property did not match the spec")
+                expect(data.scheme).to.equal("http")
+                expect(data.tests).to.not.be.empty
+                expect(data.tests[0].operations[0].transactions[0].body).to.deep.equal(customVals['/pet']['post']['201']['body']['body'])
+
+                done()
+            } catch(err) {
+                done(err)
+            }
+        })
+
+        it('should process \'/pet/{petId}\' correctly with custom path params from a file', function(done) {
+            try {
+                var customVals = require('./documents/customValuesTest.json')
+                var data = process(api, {
+                    'customValues': customVals,
+                    'paths': ['/pet/{petId}']
+                })
+
+                expect(data).to.not.be.null
+                expect(data.host).to.equal("petstore.swagger.io", "host property did not match the spec")
+                expect(data.scheme).to.equal("http")
+                expect(data.tests).to.not.be.empty
+                expect(data.tests[0].operations[0].transactions[0].path).to.equal('/v2/pet/'+customVals['/pet/{petId}']['get']['200']['path']['petId'])
+                expect(data.tests[0].operations[0].transactions[1].path).to.equal('/v2/pet/'+customVals['/pet/{petId}']['get']['path']['petId'])
+                expect(data.tests[0].operations[1].transactions[0].path).to.equal('/v2/pet/'+customVals['path']['petId'])
+
+                done()
+            } catch(err) {
+                done(err)
+            }
+        })
+
+        it('should process /pet/{petId} correctly with header params', function(done) {
+            try {
+                var data = process(api, {
+                    'paths': ['/pet/{petId}']
+                })
+
+                expect(data).to.not.be.null
+                expect(data.tests).to.not.be.empty
+                expect(data.tests[0].operations[2].transactions[0].headers).to.have.property('api_key')
 
                 done()
             } catch(err) {

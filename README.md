@@ -73,6 +73,11 @@ pet-test.js  pet-{petId}-uploadImage-test.js  user-test.js
 . . .
 ```
 
+### Custom Values
+Custom values can be supplied through both the command line and a JSON file. The in-line, command line supplied JSON will take precedent.
+
+An example custom values JSON file can be found [here](test/process/documents/customValuesTest.json).
+
 ## Options
 
 The following options can be passed to the generation function, some/all are exposed in the accompanying CLI:
