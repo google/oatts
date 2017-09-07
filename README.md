@@ -73,6 +73,28 @@ pet-test.js  pet-{petId}-uploadImage-test.js  user-test.js
 . . .
 ```
 
+### Using the result
+
+The resulting test files are built using the [mocha](https://mochajs.org/) testing framework and [chakram](http://dareid.github.io/chakram/) API testing framework. Thus, you will need both of these dependencies installed in order to run your newly generated tests.
+
+After installing these, you can run the tests with mocha:
+```
+# start your API server to test against!!
+> mocha --recursive <test directory>
+
+
+    tests for /goodbye
+        tests for get
+            ✓ should respond 200 for "Success" (57ms)
+
+    tests for /hello
+        tests for get
+            ✓ should respond 200 for "Success"
+
+
+    2 passing (82ms)
+```
+
 ### Custom Values
 Custom values can be supplied through both the command line and a JSON file. The in-line, command line supplied JSON will take precedent.
 
