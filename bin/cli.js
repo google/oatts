@@ -35,6 +35,7 @@ cli.command('generate')
     .option('-u, --customValues <customValues>', 'custom request values to be used in generation; takes precedent over a customValuesFile')
     .option('--customValuesFile <customValuesFile>', 'path to JSON file with custom request values to be used in generation')
     .option('-m, --scheme <scheme>', 'which scheme to use if multiple are present in spec')
+    .option('-t --templates <templateDir>', 'path to direcotry of custom templates')
     .action(function(options)  {
         options.error = util.optionError;
         if (!options.spec) { return  options.error('spec path is required'); }

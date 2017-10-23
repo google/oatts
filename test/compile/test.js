@@ -48,4 +48,22 @@ describe('compile', function() {
             }
         })
     })
+
+    describe('custom templates option', function() {
+        it('should compile all processed correctly into custom templates', function(done) {
+            try {
+                var tests = compile(fullProcessed, {'templates': __dirname+'/documents/customTemplates'})
+
+                expect(tests).to.not.be.null
+                tests.forEach(function(test, ndx, arr) {
+                    expect(test).to.have.property('filename')
+                    expect(test).to.have.property('contents')
+                })
+
+                done()
+            } catch(err) {
+                done(err)
+            }
+        })
+    })
 })
