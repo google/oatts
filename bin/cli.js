@@ -26,7 +26,7 @@ cli.version(require('../package.json').version)
 cli.command('generate')
     .description('generate unit test scaffolding for a given OpenAPI/Swagger Spec')
     .option('--host <host>', 'target hostname to use in test generation')
-    .option('-p, --paths <paths>', 'comma separated list of paths to generate tests for', util.paths)
+    .option('-p, --paths <paths>', 'comma separated list of paths to generate tests for', util.sep)
     .option('-e, --samples', 'generate sample response bodies rather than schema, if applicable')
     .option('-s, --spec <spec>', 'path to the target OpenAPI/Swagger spec document to consume')
     .option('-w, --writeTo <writeTo>', 'directory to write the generated tests to file')
@@ -36,6 +36,7 @@ cli.command('generate')
     .option('--customValuesFile <customValuesFile>', 'path to JSON file with custom request values to be used in generation')
     .option('-m, --scheme <scheme>', 'which scheme to use if multiple are present in spec')
     .option('-t --templates <templateDir>', 'path to direcotry of custom templates')
+    .option('-S, --status-codes <statusCodes>', 'comma separated list of status codes to explicity generate tests for', util.sep)
     .action(function(options)  {
         options.error = util.optionError;
         if (!options.spec) { return  options.error('spec path is required'); }

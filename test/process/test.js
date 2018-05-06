@@ -200,5 +200,23 @@ describe('process', function() {
                 done(err)
             }
         })
+
+        it('should only process /pet 405 tests', function(done) {
+            try {
+                var data = process(api, {
+                    'paths': ['/pet'],
+                    'statusCodes': ['405']
+                })
+
+                expect(data).to.not.be.null
+                expect(data.tests).to.not.be.empty
+                expect(data.tests.length).to.equal(1)
+                expect(data.tests[0].name).to.equal('pet')
+                
+                done()
+            } catch(err) {
+                done(err)
+            }
+        })
     })
 })

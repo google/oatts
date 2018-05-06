@@ -15,11 +15,11 @@
 'use strict';
 
 module.exports = {
-    paths: paths,
+    sep: sep,
     optionError: optionError
 }
 
-function paths(list) {
+function sep(list) {
     var sep = list.split(',')
     sep.forEach(function(s, ndx, arr) {
         arr[ndx] = s.trim()
