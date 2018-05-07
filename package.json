@@ -1,6 +1,6 @@
 {
   "name": "oatts",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "An Open API Test Template Generator",
   "keywords": [
     "Swagger",
@@ -27,7 +27,7 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "ink-docstrap": "^1.3.0",
-    "jsdoc": "^3.4.3",
+    "jsdoc": "^3.5.5",
     "mocha": "^3.2.0"
   }
 }
