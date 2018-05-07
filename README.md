@@ -67,6 +67,7 @@ Then use in your command line
     --customValuesFile <customValuesFile>  path to JSON file with custom request values to be used in generation
     -m, --scheme <scheme>                  which scheme to use if multiple are present in spec
     -t --templates <templateDir>           path to direcotry of custom templates
+    -S, --status-codes <statusCodes>       comma separated list of status codes to explicity generate tests for
 
 > oatts generate -s ./path/to/openapi.yaml -w ./output/dir
 > ls ./output/dir
@@ -130,6 +131,7 @@ The following options can be passed to the generation function, some/all are exp
 | `customValuesFile` | `--customValuesFile` | n/a | `false` | Path to a JSON file with values to populate in requests |
 | `scheme` | `--scheme -m` | `spec.schemes[0]` | `false` | Override for multiple scheme present in a spec |
 | `templates` | `--templates -t` | `'./templates'` | `false` | Path to directory containing custom templates |
+| `statusCodes` |`--status-codes -S` | `operation.responses` | `false` | comma separated list of status codes to explicity generate tests for |
 
 ## Testing
 
