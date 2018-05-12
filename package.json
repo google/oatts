@@ -21,7 +21,6 @@
   "dependencies": {
     "commander": "^2.9.0",
     "handlebars": "^4.0.6",
-    "sanitize-filename": "^1.6.1",
     "sway": "^1.0.0"
   },
   "devDependencies": {
