@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/noahdietz/oatts.svg?branch=master)](https://travis-ci.org/noahdietz/oatts)
+
 # OpenAPI Test Templates (oatts)
 
 > Generate basic unit test scaffolding for your [OpenAPI specification](https://www.openapis.org/).
@@ -142,6 +144,10 @@ To test this module simply use the `npm` script
 ## Contributing
 
 Contributors are welcome! Please see [CONTRIBUTING.md](https://github.com/noahdietz/oatts/blob/master/CONTRIBUTING.md).
+
+## Copyright
+
+Copyright 2018, Google Inc.
 
 ## License
 

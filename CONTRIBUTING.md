@@ -1,9 +1,7 @@
 # Contributing
 
 Pull requests are welcome! By participating in this project, you
-agree to abide by the Contributor Covenant [code of conduct].
-
-[code of conduct]: http://contributor-covenant.org/version/1/4/
+agree to abide by the Code Of Conduct included in this repository.
 
 If you have a request or question, start by opening an issue for discussion!
 
