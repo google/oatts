@@ -1,78 +1,40 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
-	<title>Documentation Namespace: processing</title>
+    <meta charset="utf-8">
+    <title>processing - Documentation</title>
 
-	<!--[if lt IE 9]>
-	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
-
-	<link type="text/css" rel="stylesheet" href="styles/site.paper.css">
-
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
 </head>
-
 <body>
 
-<div class="navbar navbar-default navbar-fixed-top ">
-<div class="container">
-	<div class="navbar-header">
-		<a class="navbar-brand" href="index.html">Documentation</a>
-		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-        </button>
-	</div>
-	<div class="navbar-collapse collapse" id="topNavigation">
-		<ul class="nav navbar-nav">
-			
-			<li class="dropdown">
-				<a href="namespaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Namespaces<b class="caret"></b></a>
-				<ul class="dropdown-menu ">
-					<li><a href="compilation.html">compilation</a></li><li><a href="processing.html">processing</a></li><li><a href="templateHelpers.html">templateHelpers</a></li>
-				</ul>
-			</li>
-			
-			<li class="dropdown">
-				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
-				<ul class="dropdown-menu ">
-					<li><a href="global.html">generate</a></li><li><a href="global.html">merge2</a></li>
-				</ul>
-			</li>
-			
-		</ul>
-        
-            <div class="col-sm-3 col-md-3">
-                <form class="navbar-form" role="search">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
-                        <div class="input-group-btn">
-                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        
-	</div>
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
 
-</div>
-</div>
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="compilation.html">compilation</a><ul class='methods'><li data-type='method'><a href="compilation.html#compile">compile</a></li><li data-type='method'><a href="compilation.html#compileOperationLevel">compileOperationLevel</a></li><li data-type='method'><a href="compilation.html#compilePathLevel">compilePathLevel</a></li><li data-type='method'><a href="compilation.html#compileTransactionLevel">compileTransactionLevel</a></li><li data-type='method'><a href="compilation.html#prepareTemplate">prepareTemplate</a></li></ul></li><li><a href="processing.html">processing</a><ul class='methods'><li data-type='method'><a href="processing.html#determineQueryType">determineQueryType</a></li><li data-type='method'><a href="processing.html#isNumberType">isNumberType</a></li><li data-type='method'><a href="processing.html#lookupCustomValue">lookupCustomValue</a></li><li data-type='method'><a href="processing.html#pathify">pathify</a></li><li data-type='method'><a href="processing.html#process">process</a></li><li data-type='method'><a href="processing.html#processHeaders">processHeaders</a></li><li data-type='method'><a href="processing.html#processOperations">processOperations</a></li><li data-type='method'><a href="processing.html#processParams">processParams</a></li><li data-type='method'><a href="processing.html#processPaths">processPaths</a></li><li data-type='method'><a href="processing.html#processResponse">processResponse</a></li><li data-type='method'><a href="processing.html#processTransactions">processTransactions</a></li><li data-type='method'><a href="processing.html#replaceNewlines">replaceNewlines</a></li></ul></li><li><a href="templateHelpers.html">templateHelpers</a><ul class='methods'><li data-type='method'><a href="templateHelpers.html#isNotDefaultStatusCode">isNotDefaultStatusCode</a></li><li data-type='method'><a href="templateHelpers.html#json">json</a></li><li data-type='method'><a href="templateHelpers.html#notEmptyObject">notEmptyObject</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html">generate</a></li><li><a href="global.html">merge2</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">processing</h1>
+    
+
+    
 
 
-<div class="container" id="toc-content">
-<div class="row">
 
-	
-	<div class="col-md-8">
-	
-		<div id="main">
-			
 
-	<h1 class="page-title">Namespace: processing</h1>
 <section>
 
 <header>
@@ -84,51 +46,55 @@
     
 </header>
 
-
 <article>
     <div class="container-overview">
     
         
 
-        
 <dl class="details">
-    
-
-	
-
-	
-
-	
 
     
-
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="lib_process.js.html">lib/process.js</a>, <a href="lib_process.js.html#line21">line 21</a>
+    </li></ul></dd>
     
 
     
 
     
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
+    
 
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
+
+    
+
+    
 </dl>
 
+
+
+
+        
 
         
     
@@ -140,7 +106,7 @@
 
     
 
-    
+     
 
     
 
@@ -149,32 +115,80 @@
     
         <h3 class="subsection-title">Methods</h3>
 
-        <dl>
-            
-<hr>
-<dt>
-    <h4 class="name" id="determineQueryType"><span class="type-signature"></span>determineQueryType(param)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Determines the proper type for the Query parameter
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
         
+            
 
-<table class="params table table-striped">
+    
+
+    <h4 class="name" id="determineQueryType"><span class="type-signature"></span>determineQueryType<span class="signature">(param)</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="lib_process.js.html">lib/process.js</a>, <a href="lib_process.js.html#line477">line 477</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    Determines the proper type for the Query parameter
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
     <thead>
     <tr>
         
@@ -205,7 +219,6 @@
 <span class="param-type">object</span>
 
 
-
             
             </td>
 
@@ -220,65 +233,25 @@
     </tbody>
 </table>
 
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
 
 
 
-	
-
-	
-
-	
-
-	
-</dl>
 
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
 
 
-<dl>
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
     <dt>
         Type
     </dt>
@@ -287,42 +260,86 @@
 <span class="param-type">string</span>
 
 
-
     </dd>
 </dl>
 
-
-        
-
     
-</dd>
+
 
         
             
-<hr>
-<dt>
-    <h4 class="name" id="isNumberType"><span class="type-signature"></span>isNumberType(type)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        evaluates if the given type is an OpenAPI number type or not
-    </div>
-    
 
     
 
+    <h4 class="name" id="isNumberType"><span class="type-signature"></span>isNumberType<span class="signature">(type)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="lib_process.js.html">lib/process.js</a>, <a href="lib_process.js.html#line465">line 465</a>
+    </li></ul></dd>
     
 
     
-    
-        <h5>Parameters:</h5>
-        
 
-<table class="params table table-striped">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    evaluates if the given type is an OpenAPI number type or not
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
     <thead>
     <tr>
         
@@ -353,7 +370,6 @@
 <span class="param-type">string</span>
 
 
-
             
             </td>
 
@@ -368,65 +384,25 @@
     </tbody>
 </table>
 
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
 
 
 
-	
-
-	
-
-	
-
-	
-</dl>
 
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
 
 
-<dl>
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
     <dt>
         Type
     </dt>
@@ -435,42 +411,86 @@
 <span class="param-type">boolean</span>
 
 
-
     </dd>
 </dl>
 
-
-        
-
     
-</dd>
+
 
         
             
-<hr>
-<dt>
-    <h4 class="name" id="lookupCustomValue"><span class="type-signature"></span>lookupCustomValue(name, location, code, op, path, options)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        resolves any custom values available for the given parameter
-    </div>
-    
 
     
 
+    <h4 class="name" id="lookupCustomValue"><span class="type-signature"></span>lookupCustomValue<span class="signature">(name, location, code, op, path, options)</span><span class="type-signature"> &rarr; {any}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="lib_process.js.html">lib/process.js</a>, <a href="lib_process.js.html#line287">line 287</a>
+    </li></ul></dd>
     
 
     
-    
-        <h5>Parameters:</h5>
-        
 
-<table class="params table table-striped">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    resolves any custom values available for the given parameter
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
     <thead>
     <tr>
         
@@ -501,7 +521,6 @@
 <span class="param-type">string</span>
 
 
-
             
             </td>
 
@@ -523,7 +542,6 @@
             
                 
 <span class="param-type">string</span>
-
 
 
             
@@ -549,7 +567,6 @@
 <span class="param-type">number</span>
 
 
-
             
             </td>
 
@@ -571,7 +588,6 @@
             
                 
 <span class="param-type">string</span>
-
 
 
             
@@ -597,7 +613,6 @@
 <span class="param-type">string</span>
 
 
-
             
             </td>
 
@@ -621,7 +636,6 @@
 <span class="param-type">object</span>
 
 
-
             
             </td>
 
@@ -636,65 +650,25 @@
     </tbody>
 </table>
 
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
 
 
 
-	
-
-	
-
-	
-
-	
-</dl>
 
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
 
 
-<dl>
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
     <dt>
         Type
     </dt>
@@ -703,42 +677,86 @@
 <span class="param-type">any</span>
 
 
-
     </dd>
 </dl>
 
-
-        
-
     
-</dd>
+
 
         
             
-<hr>
-<dt>
-    <h4 class="name" id="pathify"><span class="type-signature"></span>pathify(path, param, value)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        replaces the path paremeter in the given URL path with a sample value
-    </div>
-    
 
     
 
+    <h4 class="name" id="pathify"><span class="type-signature"></span>pathify<span class="signature">(path, param, value)</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="lib_process.js.html">lib/process.js</a>, <a href="lib_process.js.html#line442">line 442</a>
+    </li></ul></dd>
     
 
     
-    
-        <h5>Parameters:</h5>
-        
 
-<table class="params table table-striped">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    replaces the path paremeter in the given URL path with a sample value
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
     <thead>
     <tr>
         
@@ -769,7 +787,6 @@
 <span class="param-type">string</span>
 
 
-
             
             </td>
 
@@ -791,7 +808,6 @@
             
                 
 <span class="param-type">object</span>
-
 
 
             
@@ -820,7 +836,6 @@
 <span class="param-type">number</span>
 
 
-
             
             </td>
 
@@ -835,65 +850,25 @@
     </tbody>
 </table>
 
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
 
 
 
-	
-
-	
-
-	
-
-	
-</dl>
 
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
 
 
-<dl>
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
     <dt>
         Type
     </dt>
@@ -902,42 +877,86 @@
 <span class="param-type">string</span>
 
 
-
     </dd>
 </dl>
 
-
-        
-
     
-</dd>
+
 
         
             
-<hr>
-<dt>
-    <h4 class="name" id="process"><span class="type-signature"></span>process(api, options)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Processes the given API spec, creating test data artifacts
-    </div>
-    
 
     
 
+    <h4 class="name" id="process"><span class="type-signature"></span>process<span class="signature">(api, options)</span><span class="type-signature"> &rarr; {<a href="processing.html#.ProcessedSpec">processing.ProcessedSpec</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="lib_process.js.html">lib/process.js</a>, <a href="lib_process.js.html#line38">line 38</a>
+    </li></ul></dd>
     
 
     
-    
-        <h5>Parameters:</h5>
-        
 
-<table class="params table table-striped">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    Processes the given API spec, creating test data artifacts
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
     <thead>
     <tr>
         
@@ -968,7 +987,6 @@
 <span class="param-type">object</span>
 
 
-
             
             </td>
 
@@ -992,7 +1010,6 @@
 <span class="param-type">object</span>
 
 
-
             
             </td>
 
@@ -1007,65 +1024,25 @@
     </tbody>
 </table>
 
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
 
 
 
-	
-
-	
-
-	
-
-	
-</dl>
 
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
 
 
-<dl>
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
     <dt>
         Type
     </dt>
@@ -1074,42 +1051,86 @@
 <span class="param-type"><a href="processing.html#.ProcessedSpec">processing.ProcessedSpec</a></span>
 
 
-
     </dd>
 </dl>
 
-
-        
-
     
-</dd>
+
 
         
             
-<hr>
-<dt>
-    <h4 class="name" id="processHeaders"><span class="type-signature"></span>processHeaders(responseCode, op, path, top, options)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Determines the request headers for a transaction
-    </div>
-    
 
     
 
+    <h4 class="name" id="processHeaders"><span class="type-signature"></span>processHeaders<span class="signature">(responseCode, op, path, top, options)</span><span class="type-signature"> &rarr; {object}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="lib_process.js.html">lib/process.js</a>, <a href="lib_process.js.html#line322">line 322</a>
+    </li></ul></dd>
     
 
     
-    
-        <h5>Parameters:</h5>
-        
 
-<table class="params table table-striped">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    Determines the request headers for a transaction
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
     <thead>
     <tr>
         
@@ -1140,7 +1161,6 @@
 <span class="param-type">string</span>
 
 
-
             
             </td>
 
@@ -1162,7 +1182,6 @@
             
                 
 <span class="param-type">object</span>
-
 
 
             
@@ -1188,7 +1207,6 @@
 <span class="param-type">object</span>
 
 
-
             
             </td>
 
@@ -1210,7 +1228,6 @@
             
                 
 <span class="param-type">object</span>
-
 
 
             
@@ -1236,7 +1253,6 @@
 <span class="param-type">object</span>
 
 
-
             
             </td>
 
@@ -1251,65 +1267,25 @@
     </tbody>
 </table>
 
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
 
 
 
-	
-
-	
-
-	
-
-	
-</dl>
 
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
 
 
-<dl>
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
     <dt>
         Type
     </dt>
@@ -1318,42 +1294,86 @@
 <span class="param-type">object</span>
 
 
-
     </dd>
 </dl>
 
-
-        
-
     
-</dd>
+
 
         
             
-<hr>
-<dt>
-    <h4 class="name" id="processOperations"><span class="type-signature"></span>processOperations(api, parentPath, topLevel, options)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Processes the operations of the given Path object
-    </div>
-    
 
     
 
+    <h4 class="name" id="processOperations"><span class="type-signature"></span>processOperations<span class="signature">(api, parentPath, topLevel, options)</span><span class="type-signature"> &rarr; {Array.&lt;processing.ProcessedOp>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="lib_process.js.html">lib/process.js</a>, <a href="lib_process.js.html#line138">line 138</a>
+    </li></ul></dd>
     
 
     
-    
-        <h5>Parameters:</h5>
-        
 
-<table class="params table table-striped">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    Processes the operations of the given Path object
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
     <thead>
     <tr>
         
@@ -1384,7 +1404,6 @@
 <span class="param-type">object</span>
 
 
-
             
             </td>
 
@@ -1406,7 +1425,6 @@
             
                 
 <span class="param-type">object</span>
-
 
 
             
@@ -1432,7 +1450,6 @@
 <span class="param-type">object</span>
 
 
-
             
             </td>
 
@@ -1456,7 +1473,6 @@
 <span class="param-type">object</span>
 
 
-
             
             </td>
 
@@ -1471,65 +1487,25 @@
     </tbody>
 </table>
 
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
 
 
 
-	
-
-	
-
-	
-
-	
-</dl>
 
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
 
 
-<dl>
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
     <dt>
         Type
     </dt>
@@ -1538,42 +1514,86 @@
 <span class="param-type">Array.&lt;processing.ProcessedOp></span>
 
 
-
     </dd>
 </dl>
 
-
-        
-
     
-</dd>
+
 
         
             
-<hr>
-<dt>
-    <h4 class="name" id="processParams"><span class="type-signature"></span>processParams(code, op, path, options)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Processes the parameters of a Path + Operation for use in a test
-    </div>
-    
 
     
 
+    <h4 class="name" id="processParams"><span class="type-signature"></span>processParams<span class="signature">(code, op, path, options)</span><span class="type-signature"> &rarr; {<a href="processing.html#.ProcessedParams">processing.ProcessedParams</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="lib_process.js.html">lib/process.js</a>, <a href="lib_process.js.html#line239">line 239</a>
+    </li></ul></dd>
     
 
     
-    
-        <h5>Parameters:</h5>
-        
 
-<table class="params table table-striped">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    Processes the parameters of a Path + Operation for use in a test
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
     <thead>
     <tr>
         
@@ -1604,7 +1624,6 @@
 <span class="param-type">number</span>
 
 
-
             
             </td>
 
@@ -1626,7 +1645,6 @@
             
                 
 <span class="param-type">object</span>
-
 
 
             
@@ -1652,7 +1670,6 @@
 <span class="param-type">object</span>
 
 
-
             
             </td>
 
@@ -1676,7 +1693,6 @@
 <span class="param-type">object</span>
 
 
-
             
             </td>
 
@@ -1691,65 +1707,25 @@
     </tbody>
 </table>
 
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
 
 
 
-	
-
-	
-
-	
-
-	
-</dl>
 
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
 
 
-<dl>
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
     <dt>
         Type
     </dt>
@@ -1758,42 +1734,86 @@
 <span class="param-type"><a href="processing.html#.ProcessedParams">processing.ProcessedParams</a></span>
 
 
-
     </dd>
 </dl>
 
-
-        
-
     
-</dd>
+
 
         
             
-<hr>
-<dt>
-    <h4 class="name" id="processPaths"><span class="type-signature"></span>processPaths(api, topLevel, options)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Processes the paths defined by the api spec, or indicated by the options
-    </div>
-    
 
     
 
+    <h4 class="name" id="processPaths"><span class="type-signature"></span>processPaths<span class="signature">(api, topLevel, options)</span><span class="type-signature"> &rarr; {Array.&lt;<a href="processing.html#.ProcessedPath">processing.ProcessedPath</a>>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="lib_process.js.html">lib/process.js</a>, <a href="lib_process.js.html#line76">line 76</a>
+    </li></ul></dd>
     
 
     
-    
-        <h5>Parameters:</h5>
-        
 
-<table class="params table table-striped">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    Processes the paths defined by the api spec, or indicated by the options
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
     <thead>
     <tr>
         
@@ -1824,7 +1844,6 @@
 <span class="param-type">object</span>
 
 
-
             
             </td>
 
@@ -1846,7 +1865,6 @@
             
                 
 <span class="param-type">object</span>
-
 
 
             
@@ -1872,7 +1890,6 @@
 <span class="param-type">object</span>
 
 
-
             
             </td>
 
@@ -1887,65 +1904,25 @@
     </tbody>
 </table>
 
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
 
 
 
-	
-
-	
-
-	
-
-	
-</dl>
 
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
 
 
-<dl>
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
     <dt>
         Type
     </dt>
@@ -1954,42 +1931,86 @@
 <span class="param-type">Array.&lt;<a href="processing.html#.ProcessedPath">processing.ProcessedPath</a>></span>
 
 
-
     </dd>
 </dl>
 
-
-        
-
     
-</dd>
+
 
         
             
-<hr>
-<dt>
-    <h4 class="name" id="processResponse"><span class="type-signature"></span>processResponse(res, op, path, options)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Processes a sway Response for use in a test
-    </div>
-    
 
     
 
+    <h4 class="name" id="processResponse"><span class="type-signature"></span>processResponse<span class="signature">(res, op, path, options)</span><span class="type-signature"> &rarr; {<a href="processing.html#.ExpectedResponse">processing.ExpectedResponse</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="lib_process.js.html">lib/process.js</a>, <a href="lib_process.js.html#line405">line 405</a>
+    </li></ul></dd>
     
 
     
-    
-        <h5>Parameters:</h5>
-        
 
-<table class="params table table-striped">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    Processes a sway Response for use in a test
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
     <thead>
     <tr>
         
@@ -2020,7 +2041,6 @@
 <span class="param-type">object</span>
 
 
-
             
             </td>
 
@@ -2042,7 +2062,6 @@
             
                 
 <span class="param-type">string</span>
-
 
 
             
@@ -2068,7 +2087,6 @@
 <span class="param-type">string</span>
 
 
-
             
             </td>
 
@@ -2092,7 +2110,6 @@
 <span class="param-type">object</span>
 
 
-
             
             </td>
 
@@ -2107,65 +2124,25 @@
     </tbody>
 </table>
 
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
 
 
 
-	
-
-	
-
-	
-
-	
-</dl>
 
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
 
 
-<dl>
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
     <dt>
         Type
     </dt>
@@ -2174,42 +2151,86 @@
 <span class="param-type"><a href="processing.html#.ExpectedResponse">processing.ExpectedResponse</a></span>
 
 
-
     </dd>
 </dl>
 
-
-        
-
     
-</dd>
+
 
         
             
-<hr>
-<dt>
-    <h4 class="name" id="processTransactions"><span class="type-signature"></span>processTransactions(api, parentOp, parentPath, topLevel, options)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Processes the transactions for a given Path + Operation
-    </div>
-    
 
     
 
+    <h4 class="name" id="processTransactions"><span class="type-signature"></span>processTransactions<span class="signature">(api, parentOp, parentPath, topLevel, options)</span><span class="type-signature"> &rarr; {Array.&lt;<a href="processing.html#.ProcessedTransaction">processing.ProcessedTransaction</a>>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="lib_process.js.html">lib/process.js</a>, <a href="lib_process.js.html#line181">line 181</a>
+    </li></ul></dd>
     
 
     
-    
-        <h5>Parameters:</h5>
-        
 
-<table class="params table table-striped">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    Processes the transactions for a given Path + Operation
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
     <thead>
     <tr>
         
@@ -2240,7 +2261,6 @@
 <span class="param-type">object</span>
 
 
-
             
             </td>
 
@@ -2262,7 +2282,6 @@
             
                 
 <span class="param-type">object</span>
-
 
 
             
@@ -2288,7 +2307,6 @@
 <span class="param-type">object</span>
 
 
-
             
             </td>
 
@@ -2310,7 +2328,6 @@
             
                 
 <span class="param-type">object</span>
-
 
 
             
@@ -2336,7 +2353,6 @@
 <span class="param-type">object</span>
 
 
-
             
             </td>
 
@@ -2351,65 +2367,25 @@
     </tbody>
 </table>
 
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
 
 
 
-	
-
-	
-
-	
-
-	
-</dl>
 
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
 
 
-<dl>
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
     <dt>
         Type
     </dt>
@@ -2418,42 +2394,86 @@
 <span class="param-type">Array.&lt;<a href="processing.html#.ProcessedTransaction">processing.ProcessedTransaction</a>></span>
 
 
-
     </dd>
 </dl>
 
-
-        
-
     
-</dd>
+
 
         
             
-<hr>
-<dt>
-    <h4 class="name" id="replaceNewlines"><span class="type-signature"></span>replaceNewlines(str)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Used to replace newlines with a space in each response.description
-    </div>
-    
 
     
 
+    <h4 class="name" id="replaceNewlines"><span class="type-signature"></span>replaceNewlines<span class="signature">(str)</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="lib_process.js.html">lib/process.js</a>, <a href="lib_process.js.html#line496">line 496</a>
+    </li></ul></dd>
     
 
     
-    
-        <h5>Parameters:</h5>
-        
 
-<table class="params table table-striped">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    Used to replace newlines with a space in each response.description
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
     <thead>
     <tr>
         
@@ -2484,7 +2504,6 @@
 <span class="param-type">string</span>
 
 
-
             
             </td>
 
@@ -2499,65 +2518,25 @@
     </tbody>
 </table>
 
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
 
 
 
-	
-
-	
-
-	
-
-	
-</dl>
 
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
 
 
-<dl>
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
     <dt>
         Type
     </dt>
@@ -2566,59 +2545,73 @@
 <span class="param-type">string</span>
 
 
-
     </dd>
 </dl>
 
+    
+
 
         
-
-    
-</dd>
-
-        </dl>
     
 
     
         <h3 class="subsection-title">Type Definitions</h3>
 
-        <dl>
+        
                 
-<hr>
-<dt class="name" id=".ExpectedResponse">
-    <h4 id=".ExpectedResponse">ExpectedResponse</h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        ExpectedResponse is the expected response generated based on the API spec
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">object</span>
+<h4 class="name" id=".ExpectedResponse">ExpectedResponse</h4>
 
 
 
-            </li>
-        </ul>
-    
 
-    
+
 <dl class="details">
+
     
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="lib_process.js.html">lib/process.js</a>, <a href="lib_process.js.html#line396">line 396</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
 
     <h5 class="subsection-title">Properties:</h5>
 
-    <dl>
+    
 
-<table class="props table table-striped">
+<table class="props">
     <thead>
     <tr>
         
@@ -2649,7 +2642,6 @@
 <span class="param-type">number</span>
 
 
-
             
             </td>
 
@@ -2671,7 +2663,6 @@
             
                 
 <span class="param-type">boolean</span>
-
 
 
             
@@ -2697,7 +2688,6 @@
 <span class="param-type">object</span>
 
 
-
             
             </td>
 
@@ -2711,86 +2701,88 @@
     
     </tbody>
 </table>
-</dl>
-
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
 
 
 
-	
-
-	
-
-	
-
-	
-</dl>
 
 
-    
-</dd>
 
+<div class="description">
+    ExpectedResponse is the expected response generated based on the API spec
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
             
-                
-<hr>
-<dt class="name" id=".ProcessedParams">
-    <h4 id=".ProcessedParams">ProcessedParams</h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        ProcessedParams is an object representing the processed request parameters for unit test compilation
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
 <span class="param-type">object</span>
 
 
+        </li>
+    </ul>
 
-            </li>
-        </ul>
-    
 
-    
+
+
+
+
+            
+                
+<h4 class="name" id=".ProcessedParams">ProcessedParams</h4>
+
+
+
+
+
 <dl class="details">
+
     
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="lib_process.js.html">lib/process.js</a>, <a href="lib_process.js.html#line229">line 229</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
 
     <h5 class="subsection-title">Properties:</h5>
 
-    <dl>
+    
 
-<table class="props table table-striped">
+<table class="props">
     <thead>
     <tr>
         
@@ -2821,7 +2813,6 @@
 <span class="param-type">string</span>
 
 
-
             
             </td>
 
@@ -2843,7 +2834,6 @@
             
                 
 <span class="param-type">object</span>
-
 
 
             
@@ -2869,7 +2859,6 @@
 <span class="param-type">object</span>
 
 
-
             
             </td>
 
@@ -2893,7 +2882,6 @@
 <span class="param-type">object</span>
 
 
-
             
             </td>
 
@@ -2907,86 +2895,88 @@
     
     </tbody>
 </table>
-</dl>
-
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
 
 
 
-	
-
-	
-
-	
-
-	
-</dl>
 
 
-    
-</dd>
 
+<div class="description">
+    ProcessedParams is an object representing the processed request parameters for unit test compilation
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
             
-                
-<hr>
-<dt class="name" id=".ProcessedPath">
-    <h4 id=".ProcessedPath">ProcessedPath</h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        ProcessedPath is the fully traversed path resource ready for unit test compilation
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
 <span class="param-type">object</span>
 
 
+        </li>
+    </ul>
 
-            </li>
-        </ul>
-    
 
-    
+
+
+
+
+            
+                
+<h4 class="name" id=".ProcessedPath">ProcessedPath</h4>
+
+
+
+
+
 <dl class="details">
+
     
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="lib_process.js.html">lib/process.js</a>, <a href="lib_process.js.html#line67">line 67</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
 
     <h5 class="subsection-title">Properties:</h5>
 
-    <dl>
+    
 
-<table class="props table table-striped">
+<table class="props">
     <thead>
     <tr>
         
@@ -3017,7 +3007,6 @@
 <span class="param-type">string</span>
 
 
-
             
             </td>
 
@@ -3039,7 +3028,6 @@
             
                 
 <span class="param-type">string</span>
-
 
 
             
@@ -3065,7 +3053,6 @@
 <span class="param-type">Array.&lt;processing.ProcessedOp></span>
 
 
-
             
             </td>
 
@@ -3079,86 +3066,88 @@
     
     </tbody>
 </table>
-</dl>
-
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
 
 
 
-	
-
-	
-
-	
-
-	
-</dl>
 
 
-    
-</dd>
 
+<div class="description">
+    ProcessedPath is the fully traversed path resource ready for unit test compilation
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
             
-                
-<hr>
-<dt class="name" id=".ProcessedSpec">
-    <h4 id=".ProcessedSpec">ProcessedSpec</h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        ProcessedSpec is the fully traversed spec processed for unit test compilation
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
 <span class="param-type">object</span>
 
 
+        </li>
+    </ul>
 
-            </li>
-        </ul>
-    
 
-    
+
+
+
+
+            
+                
+<h4 class="name" id=".ProcessedSpec">ProcessedSpec</h4>
+
+
+
+
+
 <dl class="details">
+
     
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="lib_process.js.html">lib/process.js</a>, <a href="lib_process.js.html#line27">line 27</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
 
     <h5 class="subsection-title">Properties:</h5>
 
-    <dl>
+    
 
-<table class="props table table-striped">
+<table class="props">
     <thead>
     <tr>
         
@@ -3189,7 +3178,6 @@
 <span class="param-type">string</span>
 
 
-
             
             </td>
 
@@ -3211,7 +3199,6 @@
             
                 
 <span class="param-type">string</span>
-
 
 
             
@@ -3237,7 +3224,6 @@
 <span class="param-type">string</span>
 
 
-
             
             </td>
 
@@ -3259,7 +3245,6 @@
             
                 
 <span class="param-type">Array.&lt;string></span>
-
 
 
             
@@ -3285,7 +3270,6 @@
 <span class="param-type">Array.&lt;ProcessedPath></span>
 
 
-
             
             </td>
 
@@ -3299,86 +3283,88 @@
     
     </tbody>
 </table>
-</dl>
-
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
 
 
 
-	
-
-	
-
-	
-
-	
-</dl>
 
 
-    
-</dd>
 
+<div class="description">
+    ProcessedSpec is the fully traversed spec processed for unit test compilation
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
             
-                
-<hr>
-<dt class="name" id=".ProcessedTransaction">
-    <h4 id=".ProcessedTransaction">ProcessedTransaction</h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        ProcessedTransaction is an HTTP transaction (request/response pair) processed for test compilation
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
 <span class="param-type">object</span>
 
 
+        </li>
+    </ul>
 
-            </li>
-        </ul>
-    
 
-    
+
+
+
+
+            
+                
+<h4 class="name" id=".ProcessedTransaction">ProcessedTransaction</h4>
+
+
+
+
+
 <dl class="details">
+
     
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="lib_process.js.html">lib/process.js</a>, <a href="lib_process.js.html#line164">line 164</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
 
     <h5 class="subsection-title">Properties:</h5>
 
-    <dl>
+    
 
-<table class="props table table-striped">
+<table class="props">
     <thead>
     <tr>
         
@@ -3409,7 +3395,6 @@
 <span class="param-type">string</span>
 
 
-
             
             </td>
 
@@ -3431,7 +3416,6 @@
             
                 
 <span class="param-type">string</span>
-
 
 
             
@@ -3457,7 +3441,6 @@
 <span class="param-type">string</span>
 
 
-
             
             </td>
 
@@ -3479,7 +3462,6 @@
             
                 
 <span class="param-type">string</span>
-
 
 
             
@@ -3505,7 +3487,6 @@
 <span class="param-type">op</span>
 
 
-
             
             </td>
 
@@ -3527,7 +3508,6 @@
             
                 
 <span class="param-type">object</span>
-
 
 
             
@@ -3553,7 +3533,6 @@
 <span class="param-type">object</span>
 
 
-
             
             </td>
 
@@ -3575,7 +3554,6 @@
             
                 
 <span class="param-type">object</span>
-
 
 
             
@@ -3601,7 +3579,6 @@
 <span class="param-type">ExpectedResponse</span>
 
 
-
             
             </td>
 
@@ -3623,7 +3600,6 @@
             
                 
 <span class="param-type">boolean</span>
-
 
 
             
@@ -3649,7 +3625,6 @@
 <span class="param-type">Array.&lt;string></span>
 
 
-
             
             </td>
 
@@ -3663,86 +3638,88 @@
     
     </tbody>
 </table>
-</dl>
-
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
 
 
 
-	
-
-	
-
-	
-
-	
-</dl>
 
 
-    
-</dd>
 
+<div class="description">
+    ProcessedTransaction is an HTTP transaction (request/response pair) processed for test compilation
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
             
-                
-<hr>
-<dt class="name" id="ProcessedOp">
-    <h4 id="ProcessedOp">ProcessedOp</h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        ProcessedOp is the fully traversed path operation ready for unit test compilation
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
 <span class="param-type">object</span>
 
 
+        </li>
+    </ul>
 
-            </li>
-        </ul>
-    
 
-    
+
+
+
+
+            
+                
+<h4 class="name" id="ProcessedOp">ProcessedOp</h4>
+
+
+
+
+
 <dl class="details">
+
     
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="lib_process.js.html">lib/process.js</a>, <a href="lib_process.js.html#line129">line 129</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
 
     <h5 class="subsection-title">Properties:</h5>
 
-    <dl>
+    
 
-<table class="props table table-striped">
+<table class="props">
     <thead>
     <tr>
         
@@ -3773,7 +3750,6 @@
 <span class="param-type">string</span>
 
 
-
             
             </td>
 
@@ -3797,7 +3773,6 @@
 <span class="param-type">Array.&lt;<a href="processing.html#.ProcessedTransaction">processing.ProcessedTransaction</a>></span>
 
 
-
             
             </td>
 
@@ -3811,50 +3786,34 @@
     
     </tbody>
 </table>
-</dl>
-
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
 
 
 
-	
-
-	
-
-	
-
-	
-</dl>
 
 
-    
-</dd>
 
-            </dl>
+<div class="description">
+    ProcessedOp is the fully traversed path operation ready for unit test compilation
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+            
     
 
     
@@ -3865,132 +3824,15 @@
 
 
 
-		</div>
-	</div>
-
-	<div class="clearfix"></div>
-
-	
-		<div class="col-md-3">
-			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
-		</div>
-	
-
-</div>
 </div>
 
-
-    <div class="modal fade" id="searchResults">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Search results</h4>
-          </div>
-          <div class="modal-body"></div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div>
-
+<br class="clear">
 
 <footer>
-
-
-<span class="jsdoc-message">
-	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
-	
-		on 2018-05-17T21:41:46-07:00
-	
-	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
-</span>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri May 18 2018 10:10:23 GMT-0700 (PDT) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
-<script src="scripts/docstrap.lib.js"></script>
-<script src="scripts/toc.js"></script>
-
-    <script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
-
-
-<script>
-$( function () {
-	$( "[id*='$']" ).each( function () {
-		var $this = $( this );
-
-		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
-	} );
-
-	$( ".tutorial-section pre, .readme-section pre, pre.prettyprint.source" ).each( function () {
-		var $this = $( this );
-
-		var example = $this.find( "code" );
-		exampleText = example.html();
-		var lang = /{@lang (.*?)}/.exec( exampleText );
-		if ( lang && lang[1] ) {
-			exampleText = exampleText.replace( lang[0], "" );
-			example.html( exampleText );
-			lang = lang[1];
-		} else {
-			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
-			lang = langClassMatch ? langClassMatch[1] : "javascript";
-		}
-
-		if ( lang ) {
-
-			$this
-			.addClass( "sunlight-highlight-" + lang )
-			.addClass( "linenums" )
-			.html( example.html() );
-
-		}
-	} );
-
-	Sunlight.highlightAll( {
-		lineNumbers : false,
-		showMenu : true,
-		enableDoclinks : true
-	} );
-
-	$.catchAnchorLinks( {
-        navbarOffset: 10
-	} );
-	$( "#toc" ).toc( {
-		anchorName  : function ( i, heading, prefix ) {
-			return $( heading ).attr( "id" ) || ( prefix + i );
-		},
-		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
-		showAndHide : false,
-		smoothScrolling: true
-	} );
-
-	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
-	$( '.dropdown-toggle' ).dropdown();
-
-    $( "table" ).each( function () {
-      var $this = $( this );
-      $this.addClass('table');
-    } );
-
-} );
-</script>
-
-
-
-<!--Navigation and Symbol Display-->
-
-
-<!--Google Analytics-->
-
-
-
-    <script type="text/javascript">
-        $(document).ready(function() {
-            SearcherDisplay.init();
-        });
-    </script>
-
-
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
 </body>
 </html>

@@ -1,78 +1,40 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
-	<title>Documentation Namespace: templateHelpers</title>
+    <meta charset="utf-8">
+    <title>templateHelpers - Documentation</title>
 
-	<!--[if lt IE 9]>
-	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
-
-	<link type="text/css" rel="stylesheet" href="styles/site.paper.css">
-
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
 </head>
-
 <body>
 
-<div class="navbar navbar-default navbar-fixed-top ">
-<div class="container">
-	<div class="navbar-header">
-		<a class="navbar-brand" href="index.html">Documentation</a>
-		<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-        </button>
-	</div>
-	<div class="navbar-collapse collapse" id="topNavigation">
-		<ul class="nav navbar-nav">
-			
-			<li class="dropdown">
-				<a href="namespaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Namespaces<b class="caret"></b></a>
-				<ul class="dropdown-menu ">
-					<li><a href="compilation.html">compilation</a></li><li><a href="processing.html">processing</a></li><li><a href="templateHelpers.html">templateHelpers</a></li>
-				</ul>
-			</li>
-			
-			<li class="dropdown">
-				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
-				<ul class="dropdown-menu ">
-					<li><a href="global.html">generate</a></li><li><a href="global.html">merge2</a></li>
-				</ul>
-			</li>
-			
-		</ul>
-        
-            <div class="col-sm-3 col-md-3">
-                <form class="navbar-form" role="search">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search" name="q" id="search-input">
-                        <div class="input-group-btn">
-                            <button class="btn btn-default" id="search-submit"><i class="glyphicon glyphicon-search"></i></button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        
-	</div>
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
 
-</div>
-</div>
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="compilation.html">compilation</a><ul class='methods'><li data-type='method'><a href="compilation.html#compile">compile</a></li><li data-type='method'><a href="compilation.html#compileOperationLevel">compileOperationLevel</a></li><li data-type='method'><a href="compilation.html#compilePathLevel">compilePathLevel</a></li><li data-type='method'><a href="compilation.html#compileTransactionLevel">compileTransactionLevel</a></li><li data-type='method'><a href="compilation.html#prepareTemplate">prepareTemplate</a></li></ul></li><li><a href="processing.html">processing</a><ul class='methods'><li data-type='method'><a href="processing.html#determineQueryType">determineQueryType</a></li><li data-type='method'><a href="processing.html#isNumberType">isNumberType</a></li><li data-type='method'><a href="processing.html#lookupCustomValue">lookupCustomValue</a></li><li data-type='method'><a href="processing.html#pathify">pathify</a></li><li data-type='method'><a href="processing.html#process">process</a></li><li data-type='method'><a href="processing.html#processHeaders">processHeaders</a></li><li data-type='method'><a href="processing.html#processOperations">processOperations</a></li><li data-type='method'><a href="processing.html#processParams">processParams</a></li><li data-type='method'><a href="processing.html#processPaths">processPaths</a></li><li data-type='method'><a href="processing.html#processResponse">processResponse</a></li><li data-type='method'><a href="processing.html#processTransactions">processTransactions</a></li><li data-type='method'><a href="processing.html#replaceNewlines">replaceNewlines</a></li></ul></li><li><a href="templateHelpers.html">templateHelpers</a><ul class='methods'><li data-type='method'><a href="templateHelpers.html#isNotDefaultStatusCode">isNotDefaultStatusCode</a></li><li data-type='method'><a href="templateHelpers.html#json">json</a></li><li data-type='method'><a href="templateHelpers.html#notEmptyObject">notEmptyObject</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html">generate</a></li><li><a href="global.html">merge2</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">templateHelpers</h1>
+    
+
+    
 
 
-<div class="container" id="toc-content">
-<div class="row">
 
-	
-	<div class="col-md-8">
-	
-		<div id="main">
-			
 
-	<h1 class="page-title">Namespace: templateHelpers</h1>
 <section>
 
 <header>
@@ -84,51 +46,55 @@
     
 </header>
 
-
 <article>
     <div class="container-overview">
     
         
 
-        
 <dl class="details">
-    
-
-	
-
-	
-
-	
 
     
-
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="lib_handlebar-helpers.js.html">lib/handlebar-helpers.js</a>, <a href="lib_handlebar-helpers.js.html#line17">line 17</a>
+    </li></ul></dd>
     
 
     
 
     
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
+    
 
+    
 
-	
+    
 
-	
+    
 
-	
+    
 
-	
+    
+
+    
+
+    
 </dl>
 
+
+
+
+        
 
         
     
@@ -140,7 +106,7 @@
 
     
 
-    
+     
 
     
 
@@ -149,32 +115,80 @@
     
         <h3 class="subsection-title">Methods</h3>
 
-        <dl>
-            
-<hr>
-<dt>
-    <h4 class="name" id="isNotDefaultStatusCode"><span class="type-signature"></span>isNotDefaultStatusCode(code)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        determines if the given status code is the 'default' status
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
         
+            
 
-<table class="params table table-striped">
+    
+
+    <h4 class="name" id="isNotDefaultStatusCode"><span class="type-signature"></span>isNotDefaultStatusCode<span class="signature">(code)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="lib_handlebar-helpers.js.html">lib/handlebar-helpers.js</a>, <a href="lib_handlebar-helpers.js.html#line59">line 59</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    determines if the given status code is the 'default' status
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
     <thead>
     <tr>
         
@@ -208,7 +222,6 @@
 <span class="param-type">number</span>
 
 
-
             
             </td>
 
@@ -223,65 +236,25 @@
     </tbody>
 </table>
 
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
 
 
 
-	
-
-	
-
-	
-
-	
-</dl>
 
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
 
 
-<dl>
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
     <dt>
         Type
     </dt>
@@ -290,42 +263,86 @@
 <span class="param-type">boolean</span>
 
 
-
     </dd>
 </dl>
 
-
-        
-
     
-</dd>
+
 
         
             
-<hr>
-<dt>
-    <h4 class="name" id="json"><span class="type-signature"></span>json(obj)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        stringifies the given JSON object
-    </div>
-    
 
     
 
+    <h4 class="name" id="json"><span class="type-signature"></span>json<span class="signature">(obj)</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="lib_handlebar-helpers.js.html">lib/handlebar-helpers.js</a>, <a href="lib_handlebar-helpers.js.html#line43">line 43</a>
+    </li></ul></dd>
     
 
     
-    
-        <h5>Parameters:</h5>
-        
 
-<table class="params table table-striped">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    stringifies the given JSON object
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
     <thead>
     <tr>
         
@@ -354,7 +371,6 @@
             
                 
 <span class="param-type">object</span>
-
 
 
             
@@ -371,65 +387,25 @@
     </tbody>
 </table>
 
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
 
 
 
-	
-
-	
-
-	
-
-	
-</dl>
 
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
 
 
-<dl>
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
     <dt>
         Type
     </dt>
@@ -438,42 +414,86 @@
 <span class="param-type">string</span>
 
 
-
     </dd>
 </dl>
 
-
-        
-
     
-</dd>
+
 
         
             
-<hr>
-<dt>
-    <h4 class="name" id="notEmptyObject"><span class="type-signature"></span>notEmptyObject(obj)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        determines if the given object is empty or not
-    </div>
-    
 
     
 
+    <h4 class="name" id="notEmptyObject"><span class="type-signature"></span>notEmptyObject<span class="signature">(obj)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="lib_handlebar-helpers.js.html">lib/handlebar-helpers.js</a>, <a href="lib_handlebar-helpers.js.html#line27">line 27</a>
+    </li></ul></dd>
     
 
     
-    
-        <h5>Parameters:</h5>
-        
 
-<table class="params table table-striped">
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    determines if the given object is empty or not
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
     <thead>
     <tr>
         
@@ -504,7 +524,6 @@
 <span class="param-type">object</span>
 
 
-
             
             </td>
 
@@ -519,65 +538,25 @@
     </tbody>
 </table>
 
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
 
 
 
-	
-
-	
-
-	
-
-	
-</dl>
 
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
 
 
-<dl>
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
     <dt>
         Type
     </dt>
@@ -586,17 +565,13 @@
 <span class="param-type">boolean</span>
 
 
-
     </dd>
 </dl>
 
+    
+
 
         
-
-    
-</dd>
-
-        </dl>
     
 
     
@@ -609,132 +584,15 @@
 
 
 
-		</div>
-	</div>
-
-	<div class="clearfix"></div>
-
-	
-		<div class="col-md-3">
-			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
-		</div>
-	
-
-</div>
 </div>
 
-
-    <div class="modal fade" id="searchResults">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Search results</h4>
-          </div>
-          <div class="modal-body"></div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div>
-
+<br class="clear">
 
 <footer>
-
-
-<span class="jsdoc-message">
-	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
-	
-		on 2018-05-17T21:41:46-07:00
-	
-	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
-</span>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri May 18 2018 10:10:23 GMT-0700 (PDT) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
-<script src="scripts/docstrap.lib.js"></script>
-<script src="scripts/toc.js"></script>
-
-    <script type="text/javascript" src="scripts/fulltext-search-ui.js"></script>
-
-
-<script>
-$( function () {
-	$( "[id*='$']" ).each( function () {
-		var $this = $( this );
-
-		$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
-	} );
-
-	$( ".tutorial-section pre, .readme-section pre, pre.prettyprint.source" ).each( function () {
-		var $this = $( this );
-
-		var example = $this.find( "code" );
-		exampleText = example.html();
-		var lang = /{@lang (.*?)}/.exec( exampleText );
-		if ( lang && lang[1] ) {
-			exampleText = exampleText.replace( lang[0], "" );
-			example.html( exampleText );
-			lang = lang[1];
-		} else {
-			var langClassMatch = example.parent()[0].className.match(/lang\-(\S+)/);
-			lang = langClassMatch ? langClassMatch[1] : "javascript";
-		}
-
-		if ( lang ) {
-
-			$this
-			.addClass( "sunlight-highlight-" + lang )
-			.addClass( "linenums" )
-			.html( example.html() );
-
-		}
-	} );
-
-	Sunlight.highlightAll( {
-		lineNumbers : false,
-		showMenu : true,
-		enableDoclinks : true
-	} );
-
-	$.catchAnchorLinks( {
-        navbarOffset: 10
-	} );
-	$( "#toc" ).toc( {
-		anchorName  : function ( i, heading, prefix ) {
-			return $( heading ).attr( "id" ) || ( prefix + i );
-		},
-		selectors   : "#toc-content h1,#toc-content h2,#toc-content h3,#toc-content h4",
-		showAndHide : false,
-		smoothScrolling: true
-	} );
-
-	$( "#main span[id^='toc']" ).addClass( "toc-shim" );
-	$( '.dropdown-toggle' ).dropdown();
-
-    $( "table" ).each( function () {
-      var $this = $( this );
-      $this.addClass('table');
-    } );
-
-} );
-</script>
-
-
-
-<!--Navigation and Symbol Display-->
-
-
-<!--Google Analytics-->
-
-
-
-    <script type="text/javascript">
-        $(document).ready(function() {
-            SearcherDisplay.init();
-        });
-    </script>
-
-
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
 </body>
 </html>

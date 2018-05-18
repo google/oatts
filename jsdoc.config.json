@@ -6,9 +6,6 @@
         "destination": "./docs",
         "readme": "./README.md",
         "recurse": true,
-        "template": "./node_modules/ink-docstrap/template"
-    },
-    "templates": {
-        "theme": "paper"
+        "template": "./node_modules/docdash"
     }
 }
