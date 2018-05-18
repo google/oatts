@@ -5,6 +5,7 @@
 > Generate basic unit test scaffolding for your [OpenAPI specification](https://www.openapis.org/).
 
 ## Disclaimer
+This is not an officially supported Google product.
 
 `oatts` is based off of the [swagger-test-templates](https://github.com/apigee-127/swagger-test-templates) module and the lessons learned during its development.
 
