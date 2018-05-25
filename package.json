@@ -8,6 +8,10 @@
     "Test",
     "API"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/google/oatts.git"
+  },
   "main": "index.js",
   "bin": {
     "oatts": "./bin/cli.js"
