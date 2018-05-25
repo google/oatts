@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/noahdietz/oatts.svg?branch=master)](https://travis-ci.org/noahdietz/oatts)
+[![Build Status](https://travis-ci.org/google/oatts.svg?branch=master)](https://travis-ci.org/google/oatts)
 
 # OpenAPI Test Templates (oatts)
 
