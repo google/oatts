@@ -1,11 +1,16 @@
 {
-    "source": {
-        "exclude": ["./node_modules", "./test", "./templates", "./docs"]
-    },
-    "opts": {
-        "destination": "./docs",
-        "readme": "./README.md",
-        "recurse": true,
-        "template": "./node_modules/docdash"
-    }
+  "source": {
+    "exclude": [
+      "./node_modules",
+      "./test",
+      "./templates",
+      "./docs"
+    ]
+  },
+  "opts": {
+    "destination": "./docs",
+    "readme": "./README.md",
+    "recurse": true,
+    "template": "./node_modules/docdash"
+  }
 }

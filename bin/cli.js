@@ -24,32 +24,47 @@ cli.version(require('../package.json').version)
     .usage('<subcommand>')
 
 cli.command('generate')
-    .description('generate unit test scaffolding for a given OpenAPI/Swagger Spec')
+    .description(
+        'generate unit test scaffolding for a given OpenAPI/Swagger Spec')
     .option('--host <host>', 'target hostname to use in test generation')
-    .option('-p, --paths <paths>', 'comma separated list of paths to generate tests for', util.sep)
-    .option('-e, --samples', 'generate sample response bodies rather than schema, if applicable')
-    .option('-s, --spec <spec>', 'path to the target OpenAPI/Swagger spec document to consume')
-    .option('-w, --writeTo <writeTo>', 'directory to write the generated tests to file')
-    .option('-c, --consumes <consumes>', 'consumes/content-type to use in request when applicable to the API resource')
-    .option('-o, --produces <produces>', 'produces/accept to use in request when applicable to the API resource')
-    .option('-u, --customValues <customValues>', 'custom request values to be used in generation; takes precedent over a customValuesFile')
-    .option('--customValuesFile <customValuesFile>', 'path to JSON file with custom request values to be used in generation')
-    .option('-m, --scheme <scheme>', 'which scheme to use if multiple are present in spec')
-    .option('-t --templates <templateDir>', 'path to direcotry of custom templates')
-    .option('-S, --status-codes <statusCodes>', 'comma separated list of status codes to explicity generate tests for', util.sep)
-    .action(function(options)  {
-        options.error = util.optionError;
-        if (!options.spec) { return  options.error('spec path is required'); }
-        
-        var generated = oatts.generate(options.spec, options);
-        generated.then(function(gen){
+    .option('-p, --paths <paths>',
+        'comma separated list of paths to generate tests for', util.sep)
+    .option('-e, --samples',
+        'generate sample response bodies rather than schema, if applicable')
+    .option('-s, --spec <spec>',
+        'path to the target OpenAPI/Swagger spec document to consume')
+    .option('-w, --writeTo <writeTo>',
+        'directory to write the generated tests to file')
+    .option('-c, --consumes <consumes>',
+        'consumes/content-type to use in request when applicable to the API resource')
+    .option('-o, --produces <produces>',
+        'produces/accept to use in request when applicable to the API resource')
+    .option('-u, --customValues <customValues>',
+        'custom request values to be used in generation; takes precedent over a customValuesFile')
+    .option('--customValuesFile <customValuesFile>',
+        'path to JSON file with custom request values to be used in generation')
+    .option('-m, --scheme <scheme>',
+        'which scheme to use if multiple are present in spec')
+    .option('-t --templates <templateDir>',
+        'path to direcotry of custom templates')
+    .option('-S, --status-codes <statusCodes>',
+        'comma separated list of status codes to explicity generate tests for',
+        util.sep)
+    .action(function (options) {
+      options.error = util.optionError;
+      if (!options.spec) {
+        return options.error('spec path is required');
+      }
+
+      var generated = oatts.generate(options.spec, options);
+      generated.then(function (gen) {
             if (options.writeTo === undefined) {
-                console.log(gen)
+              console.log(gen)
             }
-        },
-        function(err) {
+          },
+          function (err) {
             console.error(err)
-        });
+          });
     });
 
 cli.parse(process.argv);
