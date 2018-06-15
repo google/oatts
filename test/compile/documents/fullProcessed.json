@@ -1,608 +1,1262 @@
-{ "host": "petstore.swagger.io",
-  "schemes": [ "http" ],
+{
+  "host": "petstore.swagger.io",
+  "schemes": [
+    "http"
+  ],
   "basePath": "/v2",
   "consumes": [],
-  "tests":
-   [ { "name": "pet",
-       "pathLevelDescription": "tests for /pet",
-       "operations":
-        [ { "operationLevelDescription": "tests for POST",
-            "transactions":
-             [ { "schemes": [ "http" ],
-                 "host": "petstore.swagger.io",
-                 "path": "/v2/pet",
-                 "op": "POST",
-                 "body": { "body": "{body}" },
-                 "query": {},
-                 "formData": {},
-                 "expected": { "statusCode": "405", "res": { "description": "Invalid inPUT" } },
-                 "consumes": [ "application/json", "application/xml" ] } ] },
-          { "operationLevelDescription": "tests for PUT",
-            "transactions":
-             [ { "schemes": [ "http" ],
-                 "host": "petstore.swagger.io",
-                 "path": "/v2/pet",
-                 "op": "PUT",
-                 "body": { "body": "{body}" },
-                 "query": {},
-                 "formData": {},
-                 "expected":
-                  { "statusCode": "400",
-                    "res": { "description": "Invalid ID supplied" } },
-                 "consumes": [ "application/json", "application/xml" ] },
-               { "schemes": [ "http" ],
-                 "host": "petstore.swagger.io",
-                 "path": "/v2/pet",
-                 "op": "PUT",
-                 "body": { "body": "{body}" },
-                 "query": {},
-                 "formData": {},
-                 "expected": { "statusCode": "404", "res": { "description": "Pet not found" } },
-                 "consumes": [ "application/json", "application/xml" ] },
-               { "schemes": [ "http" ],
-                 "host": "petstore.swagger.io",
-                 "path": "/v2/pet",
-                 "op": "PUT",
-                 "body": { "body": "{body}" },
-                 "query": {},
-                 "formData": {},
-                 "expected":
-                  { "statusCode": "405",
-                    "res": { "description": "Validation exception" } },
-                 "consumes": [ "application/json", "application/xml" ] } ] } ] },
-     { "name": "pet-findByStatus",
-       "pathLevelDescription": "tests for /pet/findByStatus",
-       "operations":
-        [ { "operationLevelDescription": "tests for GET",
-            "transactions":
-             [ { "schemes": [ "http" ],
-                 "host": "petstore.swagger.io",
-                 "path": "/v2/pet/findByStatus",
-                 "op": "GET",
-                 "body": {},
-                 "query": { "status": "{status}" },
-                 "formData": {},
-                 "expected":
-                  { "statusCode": "200",
-                    "res":
-                     { "description": "successful operation",
-                       "schema":
-                        { "type": "array",
-                          "items":
-                           { "required": [ "name", "photoUrls" ],
-                             "properties":
-                              { "id": { "type": "integer", "format": "int64" },
-                                "category":
-                                 { "properties":
-                                    { "id": { "type": "integer", "format": "int64" },
-                                      "name": { "type": "string" } },
-                                   "type": "object",
-                                   "xml": { "name": "Category" } },
-                                "name": { "type": "string", "example": "doggie" },
-                                "photoUrls":
-                                 { "type": "array",
-                                   "xml": { "name": "photoUrl", "wrapped": true },
-                                   "items": { "type": "string" } },
-                                "tags":
-                                 { "type": "array",
-                                   "xml": { "name": "tag", "wrapped": true },
-                                   "items":
-                                    { "properties":
-                                       { "id": { "type": "integer", "format": "int64" },
-                                         "name": { "type": "string" } },
-                                      "type": "object",
-                                      "xml": { "name": "Tag" } } },
-                                "status":
-                                 { "type": "string",
-                                   "description": "pet status in the store",
-                                   "enum": [ "available", "pending", "sold" ] } },
-                             "type": "object",
-                             "xml": { "name": "Pet" } } } } },
-                 "consumes": [] },
-               { "schemes": [ "http" ],
-                 "host": "petstore.swagger.io",
-                 "path": "/v2/pet/findByStatus",
-                 "op": "GET",
-                 "body": {},
-                 "query": { "status": "{status}" },
-                 "formData": {},
-                 "expected":
-                  { "statusCode": "400",
-                    "res": { "description": "Invalid status value" } },
-                 "consumes": [] } ] } ] },
-     { "name": "pet-findByTags",
-       "pathLevelDescription": "tests for /pet/findByTags",
-       "operations":
-        [ { "operationLevelDescription": "tests for GET",
-            "transactions":
-             [ { "schemes": [ "http" ],
-                 "host": "petstore.swagger.io",
-                 "path": "/v2/pet/findByTags",
-                 "op": "GET",
-                 "body": {},
-                 "query": { "tags": "{tags}" },
-                 "formData": {},
-                 "expected":
-                  { "statusCode": "200",
-                    "res":
-                     { "description": "successful operation",
-                       "schema":
-                        { "type": "array",
-                          "items":
-                           { "required": [ "name", "photoUrls" ],
-                             "properties":
-                              { "id": { "type": "integer", "format": "int64" },
-                                "category":
-                                 { "properties":
-                                    { "id": { "type": "integer", "format": "int64" },
-                                      "name": { "type": "string" } },
-                                   "type": "object",
-                                   "xml": { "name": "Category" } },
-                                "name": { "type": "string", "example": "doggie" },
-                                "photoUrls":
-                                 { "type": "array",
-                                   "xml": { "name": "photoUrl", "wrapped": true },
-                                   "items": { "type": "string" } },
-                                "tags":
-                                 { "type": "array",
-                                   "xml": { "name": "tag", "wrapped": true },
-                                   "items":
-                                    { "properties":
-                                       { "id": { "type": "integer", "format": "int64" },
-                                         "name": { "type": "string" } },
-                                      "type": "object",
-                                      "xml": { "name": "Tag" } } },
-                                "status":
-                                 { "type": "string",
-                                   "description": "pet status in the store",
-                                   "enum": [ "available", "pending", "sold" ] } },
-                             "type": "object",
-                             "xml": { "name": "Pet" } } } } },
-                 "consumes": [] },
-               { "schemes": [ "http" ],
-                 "host": "petstore.swagger.io",
-                 "path": "/v2/pet/findByTags",
-                 "op": "GET",
-                 "body": {},
-                 "query": { "tags": "{tags}" },
-                 "formData": {},
-                 "expected": { "statusCode": "400", "res": { "description": "Invalid tag value" } },
-                 "consumes": [] } ] } ] },
-     { "name": "pet-{petId}",
-       "pathLevelDescription": "tests for /pet/{petId}",
-       "operations":
-        [ { "operationLevelDescription": "tests for GET",
-            "transactions":
-             [ { "schemes": [ "http" ],
-                 "host": "petstore.swagger.io",
-                 "path": "/v2/pet/{petId}",
-                 "op": "GET",
-                 "body": {},
-                 "query": {},
-                 "formData": {},
-                 "expected":
-                  { "statusCode": "200",
-                    "res":
-                     { "description": "successful operation",
-                       "schema":
-                        { "required": [ "name", "photoUrls" ],
-                          "properties":
-                           { "id": { "type": "integer", "format": "int64" },
-                             "category":
-                              { "properties":
-                                 { "id": { "type": "integer", "format": "int64" },
-                                   "name": { "type": "string" } },
-                                "type": "object",
-                                "xml": { "name": "Category" } },
-                             "name": { "type": "string", "example": "doggie" },
-                             "photoUrls":
-                              { "type": "array",
-                                "xml": { "name": "photoUrl", "wrapped": true },
-                                "items": { "type": "string" } },
-                             "tags":
-                              { "type": "array",
-                                "xml": { "name": "tag", "wrapped": true },
-                                "items":
-                                 { "properties":
-                                    { "id": { "type": "integer", "format": "int64" },
-                                      "name": { "type": "string" } },
-                                   "type": "object",
-                                   "xml": { "name": "Tag" } } },
-                             "status":
-                              { "type": "string",
-                                "description": "pet status in the store",
-                                "enum": [ "available", "pending", "sold" ] } },
+  "tests": [
+    {
+      "name": "pet",
+      "pathLevelDescription": "tests for /pet",
+      "operations": [
+        {
+          "operationLevelDescription": "tests for POST",
+          "transactions": [
+            {
+              "schemes": [
+                "http"
+              ],
+              "host": "petstore.swagger.io",
+              "path": "/v2/pet",
+              "op": "POST",
+              "body": {
+                "body": "{body}"
+              },
+              "query": {},
+              "formData": {},
+              "expected": {
+                "statusCode": "405",
+                "res": {
+                  "description": "Invalid inPUT"
+                }
+              },
+              "consumes": [
+                "application/json",
+                "application/xml"
+              ]
+            }
+          ]
+        },
+        {
+          "operationLevelDescription": "tests for PUT",
+          "transactions": [
+            {
+              "schemes": [
+                "http"
+              ],
+              "host": "petstore.swagger.io",
+              "path": "/v2/pet",
+              "op": "PUT",
+              "body": {
+                "body": "{body}"
+              },
+              "query": {},
+              "formData": {},
+              "expected": {
+                "statusCode": "400",
+                "res": {
+                  "description": "Invalid ID supplied"
+                }
+              },
+              "consumes": [
+                "application/json",
+                "application/xml"
+              ]
+            },
+            {
+              "schemes": [
+                "http"
+              ],
+              "host": "petstore.swagger.io",
+              "path": "/v2/pet",
+              "op": "PUT",
+              "body": {
+                "body": "{body}"
+              },
+              "query": {},
+              "formData": {},
+              "expected": {
+                "statusCode": "404",
+                "res": {
+                  "description": "Pet not found"
+                }
+              },
+              "consumes": [
+                "application/json",
+                "application/xml"
+              ]
+            },
+            {
+              "schemes": [
+                "http"
+              ],
+              "host": "petstore.swagger.io",
+              "path": "/v2/pet",
+              "op": "PUT",
+              "body": {
+                "body": "{body}"
+              },
+              "query": {},
+              "formData": {},
+              "expected": {
+                "statusCode": "405",
+                "res": {
+                  "description": "Validation exception"
+                }
+              },
+              "consumes": [
+                "application/json",
+                "application/xml"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "pet-findByStatus",
+      "pathLevelDescription": "tests for /pet/findByStatus",
+      "operations": [
+        {
+          "operationLevelDescription": "tests for GET",
+          "transactions": [
+            {
+              "schemes": [
+                "http"
+              ],
+              "host": "petstore.swagger.io",
+              "path": "/v2/pet/findByStatus",
+              "op": "GET",
+              "body": {},
+              "query": {
+                "status": "{status}"
+              },
+              "formData": {},
+              "expected": {
+                "statusCode": "200",
+                "res": {
+                  "description": "successful operation",
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "required": [
+                        "name",
+                        "photoUrls"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "integer",
+                          "format": "int64"
+                        },
+                        "category": {
+                          "properties": {
+                            "id": {
+                              "type": "integer",
+                              "format": "int64"
+                            },
+                            "name": {
+                              "type": "string"
+                            }
+                          },
                           "type": "object",
-                          "xml": { "name": "Pet" } } } },
-                 "consumes": [] },
-               { "schemes": [ "http" ],
-                 "host": "petstore.swagger.io",
-                 "path": "/v2/pet/{petId}",
-                 "op": "GET",
-                 "body": {},
-                 "query": {},
-                 "formData": {},
-                 "expected":
-                  { "statusCode": "400",
-                    "res": { "description": "Invalid ID supplied" } },
-                 "consumes": [] },
-               { "schemes": [ "http" ],
-                 "host": "petstore.swagger.io",
-                 "path": "/v2/pet/{petId}",
-                 "op": "GET",
-                 "body": {},
-                 "query": {},
-                 "formData": {},
-                 "expected": { "statusCode": "404", "res": { "description": "Pet not found" } },
-                 "consumes": [] } ] },
-          { "operationLevelDescription": "tests for POST",
-            "transactions":
-             [ { "schemes": [ "http" ],
-                 "host": "petstore.swagger.io",
-                 "path": "/v2/pet/{petId}",
-                 "op": "POST",
-                 "body": {},
-                 "query": {},
-                 "formData": { "name": "{name}", "status": "{status}" },
-                 "expected": { "statusCode": "405", "res": { "description": "Invalid inPUT" } },
-                 "consumes": [ "application/x-www-form-urlencoded" ] } ] },
-          { "operationLevelDescription": "tests for DELETE",
-            "transactions":
-             [ { "schemes": [ "http" ],
-                 "host": "petstore.swagger.io",
-                 "path": "/v2/pet/{petId}",
-                 "op": "DELETE",
-                 "body": {},
-                 "query": {},
-                 "formData": {},
-                 "expected": { "statusCode": "400", "res": { "description": "Invalid pet value" } },
-                 "consumes": [] } ] } ] },
-     { "name": "pet-{petId}-uploadImage",
-       "pathLevelDescription": "tests for /pet/{petId}/uploadImage",
-       "operations":
-        [ { "operationLevelDescription": "tests for POST",
-            "transactions":
-             [ { "schemes": [ "http" ],
-                 "host": "petstore.swagger.io",
-                 "path": "/v2/pet/{petId}/uploadImage",
-                 "op": "POST",
-                 "body": {},
-                 "query": {},
-                 "formData": { "additionalMetadata": "{additionalMetadata}", "file": "{file}" },
-                 "expected":
-                  { "statusCode": "200",
-                    "res":
-                     { "description": "successful operation",
-                       "schema":
-                        { "properties":
-                           { "code": { "type": "integer", "format": "int32" },
-                             "type": { "type": "string" },
-                             "message": { "type": "string" } },
-                          "type": "object" } } },
-                 "consumes": [ "multipart/form-data" ] } ] } ] },
-     { "name": "store-inventory",
-       "pathLevelDescription": "tests for /store/inventory",
-       "operations":
-        [ { "operationLevelDescription": "tests for GET",
-            "transactions":
-             [ { "schemes": [ "http" ],
-                 "host": "petstore.swagger.io",
-                 "path": "/v2/store/inventory",
-                 "op": "GET",
-                 "body": {},
-                 "query": {},
-                 "formData": {},
-                 "expected":
-                  { "statusCode": "200",
-                    "res":
-                     { "description": "successful operation",
-                       "schema":
-                        { "type": "object",
-                          "additionalProperties": { "type": "integer", "format": "int32" } } } },
-                 "consumes": [] } ] } ] },
-     { "name": "store-order",
-       "pathLevelDescription": "tests for /store/order",
-       "operations":
-        [ { "operationLevelDescription": "tests for POST",
-            "transactions":
-             [ { "schemes": [ "http" ],
-                 "host": "petstore.swagger.io",
-                 "path": "/v2/store/order",
-                 "op": "POST",
-                 "body": { "body": "{body}" },
-                 "query": {},
-                 "formData": {},
-                 "expected":
-                  { "statusCode": "200",
-                    "res":
-                     { "description": "successful operation",
-                       "schema":
-                        { "properties":
-                           { "id": { "type": "integer", "format": "int64" },
-                             "petId": { "type": "integer", "format": "int64" },
-                             "quantity": { "type": "integer", "format": "int32" },
-                             "shipDate": { "type": "string", "format": "date-time" },
-                             "status":
-                              { "type": "string",
-                                "description": "Order Status",
-                                "enum": [ "placed", "approved", "delivered" ] },
-                             "complete": { "type": "boolean", "default": false } },
+                          "xml": {
+                            "name": "Category"
+                          }
+                        },
+                        "name": {
+                          "type": "string",
+                          "example": "doggie"
+                        },
+                        "photoUrls": {
+                          "type": "array",
+                          "xml": {
+                            "name": "photoUrl",
+                            "wrapped": true
+                          },
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "tags": {
+                          "type": "array",
+                          "xml": {
+                            "name": "tag",
+                            "wrapped": true
+                          },
+                          "items": {
+                            "properties": {
+                              "id": {
+                                "type": "integer",
+                                "format": "int64"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "type": "object",
+                            "xml": {
+                              "name": "Tag"
+                            }
+                          }
+                        },
+                        "status": {
+                          "type": "string",
+                          "description": "pet status in the store",
+                          "enum": [
+                            "available",
+                            "pending",
+                            "sold"
+                          ]
+                        }
+                      },
+                      "type": "object",
+                      "xml": {
+                        "name": "Pet"
+                      }
+                    }
+                  }
+                }
+              },
+              "consumes": []
+            },
+            {
+              "schemes": [
+                "http"
+              ],
+              "host": "petstore.swagger.io",
+              "path": "/v2/pet/findByStatus",
+              "op": "GET",
+              "body": {},
+              "query": {
+                "status": "{status}"
+              },
+              "formData": {},
+              "expected": {
+                "statusCode": "400",
+                "res": {
+                  "description": "Invalid status value"
+                }
+              },
+              "consumes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "pet-findByTags",
+      "pathLevelDescription": "tests for /pet/findByTags",
+      "operations": [
+        {
+          "operationLevelDescription": "tests for GET",
+          "transactions": [
+            {
+              "schemes": [
+                "http"
+              ],
+              "host": "petstore.swagger.io",
+              "path": "/v2/pet/findByTags",
+              "op": "GET",
+              "body": {},
+              "query": {
+                "tags": "{tags}"
+              },
+              "formData": {},
+              "expected": {
+                "statusCode": "200",
+                "res": {
+                  "description": "successful operation",
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "required": [
+                        "name",
+                        "photoUrls"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "integer",
+                          "format": "int64"
+                        },
+                        "category": {
+                          "properties": {
+                            "id": {
+                              "type": "integer",
+                              "format": "int64"
+                            },
+                            "name": {
+                              "type": "string"
+                            }
+                          },
                           "type": "object",
-                          "xml": { "name": "Order" } } } },
-                 "consumes": [] },
-               { "schemes": [ "http" ],
-                 "host": "petstore.swagger.io",
-                 "path": "/v2/store/order",
-                 "op": "POST",
-                 "body": { "body": "{body}" },
-                 "query": {},
-                 "formData": {},
-                 "expected": { "statusCode": "400", "res": { "description": "Invalid Order" } },
-                 "consumes": [] } ] } ] },
-     { "name": "store-order-{orderId}",
-       "pathLevelDescription": "tests for /store/order/{orderId}",
-       "operations":
-        [ { "operationLevelDescription": "tests for GET",
-            "transactions":
-             [ { "schemes": [ "http" ],
-                 "host": "petstore.swagger.io",
-                 "path": "/v2/store/order/{orderId}",
-                 "op": "GET",
-                 "body": {},
-                 "query": {},
-                 "formData": {},
-                 "expected":
-                  { "statusCode": "200",
-                    "res":
-                     { "description": "successful operation",
-                       "schema":
-                        { "properties":
-                           { "id": { "type": "integer", "format": "int64" },
-                             "petId": { "type": "integer", "format": "int64" },
-                             "quantity": { "type": "integer", "format": "int32" },
-                             "shipDate": { "type": "string", "format": "date-time" },
-                             "status":
-                              { "type": "string",
-                                "description": "Order Status",
-                                "enum": [ "placed", "approved", "delivered" ] },
-                             "complete": { "type": "boolean", "default": false } },
+                          "xml": {
+                            "name": "Category"
+                          }
+                        },
+                        "name": {
+                          "type": "string",
+                          "example": "doggie"
+                        },
+                        "photoUrls": {
+                          "type": "array",
+                          "xml": {
+                            "name": "photoUrl",
+                            "wrapped": true
+                          },
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "tags": {
+                          "type": "array",
+                          "xml": {
+                            "name": "tag",
+                            "wrapped": true
+                          },
+                          "items": {
+                            "properties": {
+                              "id": {
+                                "type": "integer",
+                                "format": "int64"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "type": "object",
+                            "xml": {
+                              "name": "Tag"
+                            }
+                          }
+                        },
+                        "status": {
+                          "type": "string",
+                          "description": "pet status in the store",
+                          "enum": [
+                            "available",
+                            "pending",
+                            "sold"
+                          ]
+                        }
+                      },
+                      "type": "object",
+                      "xml": {
+                        "name": "Pet"
+                      }
+                    }
+                  }
+                }
+              },
+              "consumes": []
+            },
+            {
+              "schemes": [
+                "http"
+              ],
+              "host": "petstore.swagger.io",
+              "path": "/v2/pet/findByTags",
+              "op": "GET",
+              "body": {},
+              "query": {
+                "tags": "{tags}"
+              },
+              "formData": {},
+              "expected": {
+                "statusCode": "400",
+                "res": {
+                  "description": "Invalid tag value"
+                }
+              },
+              "consumes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "pet-{petId}",
+      "pathLevelDescription": "tests for /pet/{petId}",
+      "operations": [
+        {
+          "operationLevelDescription": "tests for GET",
+          "transactions": [
+            {
+              "schemes": [
+                "http"
+              ],
+              "host": "petstore.swagger.io",
+              "path": "/v2/pet/{petId}",
+              "op": "GET",
+              "body": {},
+              "query": {},
+              "formData": {},
+              "expected": {
+                "statusCode": "200",
+                "res": {
+                  "description": "successful operation",
+                  "schema": {
+                    "required": [
+                      "name",
+                      "photoUrls"
+                    ],
+                    "properties": {
+                      "id": {
+                        "type": "integer",
+                        "format": "int64"
+                      },
+                      "category": {
+                        "properties": {
+                          "id": {
+                            "type": "integer",
+                            "format": "int64"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        },
+                        "type": "object",
+                        "xml": {
+                          "name": "Category"
+                        }
+                      },
+                      "name": {
+                        "type": "string",
+                        "example": "doggie"
+                      },
+                      "photoUrls": {
+                        "type": "array",
+                        "xml": {
+                          "name": "photoUrl",
+                          "wrapped": true
+                        },
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "tags": {
+                        "type": "array",
+                        "xml": {
+                          "name": "tag",
+                          "wrapped": true
+                        },
+                        "items": {
+                          "properties": {
+                            "id": {
+                              "type": "integer",
+                              "format": "int64"
+                            },
+                            "name": {
+                              "type": "string"
+                            }
+                          },
                           "type": "object",
-                          "xml": { "name": "Order" } } } },
-                 "consumes": [] },
-               { "schemes": [ "http" ],
-                 "host": "petstore.swagger.io",
-                 "path": "/v2/store/order/{orderId}",
-                 "op": "GET",
-                 "body": {},
-                 "query": {},
-                 "formData": {},
-                 "expected":
-                  { "statusCode": "400",
-                    "res": { "description": "Invalid ID supplied" } },
-                 "consumes": [] },
-               { "schemes": [ "http" ],
-                 "host": "petstore.swagger.io",
-                 "path": "/v2/store/order/{orderId}",
-                 "op": "GET",
-                 "body": {},
-                 "query": {},
-                 "formData": {},
-                 "expected": { "statusCode": "404", "res": { "description": "Order not found" } },
-                 "consumes": [] } ] },
-          { "operationLevelDescription": "tests for DELETE",
-            "transactions":
-             [ { "schemes": [ "http" ],
-                 "host": "petstore.swagger.io",
-                 "path": "/v2/store/order/{orderId}",
-                 "op": "DELETE",
-                 "body": {},
-                 "query": {},
-                 "formData": {},
-                 "expected":
-                  { "statusCode": "400",
-                    "res": { "description": "Invalid ID supplied" } },
-                 "consumes": [] },
-               { "schemes": [ "http" ],
-                 "host": "petstore.swagger.io",
-                 "path": "/v2/store/order/{orderId}",
-                 "op": "DELETE",
-                 "body": {},
-                 "query": {},
-                 "formData": {},
-                 "expected": { "statusCode": "404", "res": { "description": "Order not found" } },
-                 "consumes": [] } ] } ] },
-     { "name": "user",
-       "pathLevelDescription": "tests for /user",
-       "operations":
-        [ { "operationLevelDescription": "tests for POST",
-            "transactions":
-             [ { "schemes": [ "http" ],
-                 "host": "petstore.swagger.io",
-                 "path": "/v2/user",
-                 "op": "POST",
-                 "body": { "body": "{body}" },
-                 "query": {},
-                 "formData": {},
-                 "expected":
-                  { "statusCode": "default",
-                    "res": { "description": "successful operation" } },
-                 "consumes": [] } ] } ] },
-     { "name": "user-createWithArray",
-       "pathLevelDescription": "tests for /user/createWithArray",
-       "operations":
-        [ { "operationLevelDescription": "tests for POST",
-            "transactions":
-             [ { "schemes": [ "http" ],
-                 "host": "petstore.swagger.io",
-                 "path": "/v2/user/createWithArray",
-                 "op": "POST",
-                 "body": { "body": "{body}" },
-                 "query": {},
-                 "formData": {},
-                 "expected":
-                  { "statusCode": "default",
-                    "res": { "description": "successful operation" } },
-                 "consumes": [] } ] } ] },
-     { "name": "user-createWithList",
-       "pathLevelDescription": "tests for /user/createWithList",
-       "operations":
-        [ { "operationLevelDescription": "tests for POST",
-            "transactions":
-             [ { "schemes": [ "http" ],
-                 "host": "petstore.swagger.io",
-                 "path": "/v2/user/createWithList",
-                 "op": "POST",
-                 "body": { "body": "{body}" },
-                 "query": {},
-                 "formData": {},
-                 "expected":
-                  { "statusCode": "default",
-                    "res": { "description": "successful operation" } },
-                 "consumes": [] } ] } ] },
-     { "name": "user-login",
-       "pathLevelDescription": "tests for /user/login",
-       "operations":
-        [ { "operationLevelDescription": "tests for GET",
-            "transactions":
-             [ { "schemes": [ "http" ],
-                 "host": "petstore.swagger.io",
-                 "path": "/v2/user/login",
-                 "op": "GET",
-                 "body": {},
-                 "query": { "username": "{username}", "password": "{password}" },
-                 "formData": {},
-                 "expected":
-                  { "statusCode": "200",
-                    "res":
-                     { "description": "successful operation",
-                       "schema": { "type": "string" },
-                       "headers":
-                        { "X-Rate-Limit":
-                           { "type": "integer",
-                             "format": "int32",
-                             "description": "calls per hour allowed by the user" },
-                          "X-Expires-After":
-                           { "type": "string",
-                             "format": "date-time",
-                             "description": "date in UTC when toekn expires" } } } },
-                 "consumes": [] },
-               { "schemes": [ "http" ],
-                 "host": "petstore.swagger.io",
-                 "path": "/v2/user/login",
-                 "op": "GET",
-                 "body": {},
-                 "query": { "username": "{username}", "password": "{password}" },
-                 "formData": {},
-                 "expected":
-                  { "statusCode": "400",
-                    "res": { "description": "Invalid username/password supplied" } },
-                 "consumes": [] } ] } ] },
-     { "name": "user-logout",
-       "pathLevelDescription": "tests for /user/logout",
-       "operations":
-        [ { "operationLevelDescription": "tests for GET",
-            "transactions":
-             [ { "schemes": [ "http" ],
-                 "host": "petstore.swagger.io",
-                 "path": "/v2/user/logout",
-                 "op": "GET",
-                 "body": {},
-                 "query": {},
-                 "formData": {},
-                 "expected":
-                  { "statusCode": "default",
-                    "res": { "description": "successful operation" } },
-                 "consumes": [] } ] } ] },
-     { "name": "user-{username}",
-       "pathLevelDescription": "tests for /user/{username}",
-       "operations":
-        [ { "operationLevelDescription": "tests for GET",
-            "transactions":
-             [ { "schemes": [ "http" ],
-                 "host": "petstore.swagger.io",
-                 "path": "/v2/user/{username}",
-                 "op": "GET",
-                 "body": {},
-                 "query": {},
-                 "formData": {},
-                 "expected":
-                  { "statusCode": "200",
-                    "res":
-                     { "description": "successful operation",
-                       "schema":
-                        { "properties":
-                           { "id": { "type": "integer", "format": "int64" },
-                             "username": { "type": "string" },
-                             "firstName": { "type": "string" },
-                             "lastName": { "type": "string" },
-                             "email": { "type": "string" },
-                             "password": { "type": "string" },
-                             "phone": { "type": "string" },
-                             "userStatus": { "type": "integer", "format": "int32", "description": "User Status" } },
-                          "type": "object",
-                          "xml": { "name": "User" } } } },
-                 "consumes": [] },
-               { "schemes": [ "http" ],
-                 "host": "petstore.swagger.io",
-                 "path": "/v2/user/{username}",
-                 "op": "GET",
-                 "body": {},
-                 "query": {},
-                 "formData": {},
-                 "expected":
-                  { "statusCode": "400",
-                    "res": { "description": "Invalid username supplied" } },
-                 "consumes": [] },
-               { "schemes": [ "http" ],
-                 "host": "petstore.swagger.io",
-                 "path": "/v2/user/{username}",
-                 "op": "GET",
-                 "body": {},
-                 "query": {},
-                 "formData": {},
-                 "expected": { "statusCode": "404", "res": { "description": "User not found" } },
-                 "consumes": [] } ] },
-          { "operationLevelDescription": "tests for PUT",
-            "transactions":
-             [ { "schemes": [ "http" ],
-                 "host": "petstore.swagger.io",
-                 "path": "/v2/user/{username}",
-                 "op": "PUT",
-                 "body": { "body": "{body}" },
-                 "query": {},
-                 "formData": {},
-                 "expected":
-                  { "statusCode": "400",
-                    "res": { "description": "Invalid user supplied" } },
-                 "consumes": [] },
-               { "schemes": [ "http" ],
-                 "host": "petstore.swagger.io",
-                 "path": "/v2/user/{username}",
-                 "op": "PUT",
-                 "body": { "body": "{body}" },
-                 "query": {},
-                 "formData": {},
-                 "expected": { "statusCode": "404", "res": { "description": "User not found" } },
-                 "consumes": [] } ] },
-          { "operationLevelDescription": "tests for DELETE",
-            "transactions":
-             [ { "schemes": [ "http" ],
-                 "host": "petstore.swagger.io",
-                 "path": "/v2/user/{username}",
-                 "op": "DELETE",
-                 "body": {},
-                 "query": {},
-                 "formData": {},
-                 "expected":
-                  { "statusCode": "400",
-                    "res": { "description": "Invalid username supplied" } },
-                 "consumes": [] },
-               { "schemes": [ "http" ],
-                 "host": "petstore.swagger.io",
-                 "path": "/v2/user/{username}",
-                 "op": "DELETE",
-                 "body": {},
-                 "query": {},
-                 "formData": {},
-                 "expected": { "statusCode": "404", "res": { "description": "User not found" } },
-                 "consumes": [] } ] } ] } ] }
+                          "xml": {
+                            "name": "Tag"
+                          }
+                        }
+                      },
+                      "status": {
+                        "type": "string",
+                        "description": "pet status in the store",
+                        "enum": [
+                          "available",
+                          "pending",
+                          "sold"
+                        ]
+                      }
+                    },
+                    "type": "object",
+                    "xml": {
+                      "name": "Pet"
+                    }
+                  }
+                }
+              },
+              "consumes": []
+            },
+            {
+              "schemes": [
+                "http"
+              ],
+              "host": "petstore.swagger.io",
+              "path": "/v2/pet/{petId}",
+              "op": "GET",
+              "body": {},
+              "query": {},
+              "formData": {},
+              "expected": {
+                "statusCode": "400",
+                "res": {
+                  "description": "Invalid ID supplied"
+                }
+              },
+              "consumes": []
+            },
+            {
+              "schemes": [
+                "http"
+              ],
+              "host": "petstore.swagger.io",
+              "path": "/v2/pet/{petId}",
+              "op": "GET",
+              "body": {},
+              "query": {},
+              "formData": {},
+              "expected": {
+                "statusCode": "404",
+                "res": {
+                  "description": "Pet not found"
+                }
+              },
+              "consumes": []
+            }
+          ]
+        },
+        {
+          "operationLevelDescription": "tests for POST",
+          "transactions": [
+            {
+              "schemes": [
+                "http"
+              ],
+              "host": "petstore.swagger.io",
+              "path": "/v2/pet/{petId}",
+              "op": "POST",
+              "body": {},
+              "query": {},
+              "formData": {
+                "name": "{name}",
+                "status": "{status}"
+              },
+              "expected": {
+                "statusCode": "405",
+                "res": {
+                  "description": "Invalid inPUT"
+                }
+              },
+              "consumes": [
+                "application/x-www-form-urlencoded"
+              ]
+            }
+          ]
+        },
+        {
+          "operationLevelDescription": "tests for DELETE",
+          "transactions": [
+            {
+              "schemes": [
+                "http"
+              ],
+              "host": "petstore.swagger.io",
+              "path": "/v2/pet/{petId}",
+              "op": "DELETE",
+              "body": {},
+              "query": {},
+              "formData": {},
+              "expected": {
+                "statusCode": "400",
+                "res": {
+                  "description": "Invalid pet value"
+                }
+              },
+              "consumes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "pet-{petId}-uploadImage",
+      "pathLevelDescription": "tests for /pet/{petId}/uploadImage",
+      "operations": [
+        {
+          "operationLevelDescription": "tests for POST",
+          "transactions": [
+            {
+              "schemes": [
+                "http"
+              ],
+              "host": "petstore.swagger.io",
+              "path": "/v2/pet/{petId}/uploadImage",
+              "op": "POST",
+              "body": {},
+              "query": {},
+              "formData": {
+                "additionalMetadata": "{additionalMetadata}",
+                "file": "{file}"
+              },
+              "expected": {
+                "statusCode": "200",
+                "res": {
+                  "description": "successful operation",
+                  "schema": {
+                    "properties": {
+                      "code": {
+                        "type": "integer",
+                        "format": "int32"
+                      },
+                      "type": {
+                        "type": "string"
+                      },
+                      "message": {
+                        "type": "string"
+                      }
+                    },
+                    "type": "object"
+                  }
+                }
+              },
+              "consumes": [
+                "multipart/form-data"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "store-inventory",
+      "pathLevelDescription": "tests for /store/inventory",
+      "operations": [
+        {
+          "operationLevelDescription": "tests for GET",
+          "transactions": [
+            {
+              "schemes": [
+                "http"
+              ],
+              "host": "petstore.swagger.io",
+              "path": "/v2/store/inventory",
+              "op": "GET",
+              "body": {},
+              "query": {},
+              "formData": {},
+              "expected": {
+                "statusCode": "200",
+                "res": {
+                  "description": "successful operation",
+                  "schema": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "integer",
+                      "format": "int32"
+                    }
+                  }
+                }
+              },
+              "consumes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "store-order",
+      "pathLevelDescription": "tests for /store/order",
+      "operations": [
+        {
+          "operationLevelDescription": "tests for POST",
+          "transactions": [
+            {
+              "schemes": [
+                "http"
+              ],
+              "host": "petstore.swagger.io",
+              "path": "/v2/store/order",
+              "op": "POST",
+              "body": {
+                "body": "{body}"
+              },
+              "query": {},
+              "formData": {},
+              "expected": {
+                "statusCode": "200",
+                "res": {
+                  "description": "successful operation",
+                  "schema": {
+                    "properties": {
+                      "id": {
+                        "type": "integer",
+                        "format": "int64"
+                      },
+                      "petId": {
+                        "type": "integer",
+                        "format": "int64"
+                      },
+                      "quantity": {
+                        "type": "integer",
+                        "format": "int32"
+                      },
+                      "shipDate": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "status": {
+                        "type": "string",
+                        "description": "Order Status",
+                        "enum": [
+                          "placed",
+                          "approved",
+                          "delivered"
+                        ]
+                      },
+                      "complete": {
+                        "type": "boolean",
+                        "default": false
+                      }
+                    },
+                    "type": "object",
+                    "xml": {
+                      "name": "Order"
+                    }
+                  }
+                }
+              },
+              "consumes": []
+            },
+            {
+              "schemes": [
+                "http"
+              ],
+              "host": "petstore.swagger.io",
+              "path": "/v2/store/order",
+              "op": "POST",
+              "body": {
+                "body": "{body}"
+              },
+              "query": {},
+              "formData": {},
+              "expected": {
+                "statusCode": "400",
+                "res": {
+                  "description": "Invalid Order"
+                }
+              },
+              "consumes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "store-order-{orderId}",
+      "pathLevelDescription": "tests for /store/order/{orderId}",
+      "operations": [
+        {
+          "operationLevelDescription": "tests for GET",
+          "transactions": [
+            {
+              "schemes": [
+                "http"
+              ],
+              "host": "petstore.swagger.io",
+              "path": "/v2/store/order/{orderId}",
+              "op": "GET",
+              "body": {},
+              "query": {},
+              "formData": {},
+              "expected": {
+                "statusCode": "200",
+                "res": {
+                  "description": "successful operation",
+                  "schema": {
+                    "properties": {
+                      "id": {
+                        "type": "integer",
+                        "format": "int64"
+                      },
+                      "petId": {
+                        "type": "integer",
+                        "format": "int64"
+                      },
+                      "quantity": {
+                        "type": "integer",
+                        "format": "int32"
+                      },
+                      "shipDate": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "status": {
+                        "type": "string",
+                        "description": "Order Status",
+                        "enum": [
+                          "placed",
+                          "approved",
+                          "delivered"
+                        ]
+                      },
+                      "complete": {
+                        "type": "boolean",
+                        "default": false
+                      }
+                    },
+                    "type": "object",
+                    "xml": {
+                      "name": "Order"
+                    }
+                  }
+                }
+              },
+              "consumes": []
+            },
+            {
+              "schemes": [
+                "http"
+              ],
+              "host": "petstore.swagger.io",
+              "path": "/v2/store/order/{orderId}",
+              "op": "GET",
+              "body": {},
+              "query": {},
+              "formData": {},
+              "expected": {
+                "statusCode": "400",
+                "res": {
+                  "description": "Invalid ID supplied"
+                }
+              },
+              "consumes": []
+            },
+            {
+              "schemes": [
+                "http"
+              ],
+              "host": "petstore.swagger.io",
+              "path": "/v2/store/order/{orderId}",
+              "op": "GET",
+              "body": {},
+              "query": {},
+              "formData": {},
+              "expected": {
+                "statusCode": "404",
+                "res": {
+                  "description": "Order not found"
+                }
+              },
+              "consumes": []
+            }
+          ]
+        },
+        {
+          "operationLevelDescription": "tests for DELETE",
+          "transactions": [
+            {
+              "schemes": [
+                "http"
+              ],
+              "host": "petstore.swagger.io",
+              "path": "/v2/store/order/{orderId}",
+              "op": "DELETE",
+              "body": {},
+              "query": {},
+              "formData": {},
+              "expected": {
+                "statusCode": "400",
+                "res": {
+                  "description": "Invalid ID supplied"
+                }
+              },
+              "consumes": []
+            },
+            {
+              "schemes": [
+                "http"
+              ],
+              "host": "petstore.swagger.io",
+              "path": "/v2/store/order/{orderId}",
+              "op": "DELETE",
+              "body": {},
+              "query": {},
+              "formData": {},
+              "expected": {
+                "statusCode": "404",
+                "res": {
+                  "description": "Order not found"
+                }
+              },
+              "consumes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "user",
+      "pathLevelDescription": "tests for /user",
+      "operations": [
+        {
+          "operationLevelDescription": "tests for POST",
+          "transactions": [
+            {
+              "schemes": [
+                "http"
+              ],
+              "host": "petstore.swagger.io",
+              "path": "/v2/user",
+              "op": "POST",
+              "body": {
+                "body": "{body}"
+              },
+              "query": {},
+              "formData": {},
+              "expected": {
+                "statusCode": "default",
+                "res": {
+                  "description": "successful operation"
+                }
+              },
+              "consumes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "user-createWithArray",
+      "pathLevelDescription": "tests for /user/createWithArray",
+      "operations": [
+        {
+          "operationLevelDescription": "tests for POST",
+          "transactions": [
+            {
+              "schemes": [
+                "http"
+              ],
+              "host": "petstore.swagger.io",
+              "path": "/v2/user/createWithArray",
+              "op": "POST",
+              "body": {
+                "body": "{body}"
+              },
+              "query": {},
+              "formData": {},
+              "expected": {
+                "statusCode": "default",
+                "res": {
+                  "description": "successful operation"
+                }
+              },
+              "consumes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "user-createWithList",
+      "pathLevelDescription": "tests for /user/createWithList",
+      "operations": [
+        {
+          "operationLevelDescription": "tests for POST",
+          "transactions": [
+            {
+              "schemes": [
+                "http"
+              ],
+              "host": "petstore.swagger.io",
+              "path": "/v2/user/createWithList",
+              "op": "POST",
+              "body": {
+                "body": "{body}"
+              },
+              "query": {},
+              "formData": {},
+              "expected": {
+                "statusCode": "default",
+                "res": {
+                  "description": "successful operation"
+                }
+              },
+              "consumes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "user-login",
+      "pathLevelDescription": "tests for /user/login",
+      "operations": [
+        {
+          "operationLevelDescription": "tests for GET",
+          "transactions": [
+            {
+              "schemes": [
+                "http"
+              ],
+              "host": "petstore.swagger.io",
+              "path": "/v2/user/login",
+              "op": "GET",
+              "body": {},
+              "query": {
+                "username": "{username}",
+                "password": "{password}"
+              },
+              "formData": {},
+              "expected": {
+                "statusCode": "200",
+                "res": {
+                  "description": "successful operation",
+                  "schema": {
+                    "type": "string"
+                  },
+                  "headers": {
+                    "X-Rate-Limit": {
+                      "type": "integer",
+                      "format": "int32",
+                      "description": "calls per hour allowed by the user"
+                    },
+                    "X-Expires-After": {
+                      "type": "string",
+                      "format": "date-time",
+                      "description": "date in UTC when toekn expires"
+                    }
+                  }
+                }
+              },
+              "consumes": []
+            },
+            {
+              "schemes": [
+                "http"
+              ],
+              "host": "petstore.swagger.io",
+              "path": "/v2/user/login",
+              "op": "GET",
+              "body": {},
+              "query": {
+                "username": "{username}",
+                "password": "{password}"
+              },
+              "formData": {},
+              "expected": {
+                "statusCode": "400",
+                "res": {
+                  "description": "Invalid username/password supplied"
+                }
+              },
+              "consumes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "user-logout",
+      "pathLevelDescription": "tests for /user/logout",
+      "operations": [
+        {
+          "operationLevelDescription": "tests for GET",
+          "transactions": [
+            {
+              "schemes": [
+                "http"
+              ],
+              "host": "petstore.swagger.io",
+              "path": "/v2/user/logout",
+              "op": "GET",
+              "body": {},
+              "query": {},
+              "formData": {},
+              "expected": {
+                "statusCode": "default",
+                "res": {
+                  "description": "successful operation"
+                }
+              },
+              "consumes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "user-{username}",
+      "pathLevelDescription": "tests for /user/{username}",
+      "operations": [
+        {
+          "operationLevelDescription": "tests for GET",
+          "transactions": [
+            {
+              "schemes": [
+                "http"
+              ],
+              "host": "petstore.swagger.io",
+              "path": "/v2/user/{username}",
+              "op": "GET",
+              "body": {},
+              "query": {},
+              "formData": {},
+              "expected": {
+                "statusCode": "200",
+                "res": {
+                  "description": "successful operation",
+                  "schema": {
+                    "properties": {
+                      "id": {
+                        "type": "integer",
+                        "format": "int64"
+                      },
+                      "username": {
+                        "type": "string"
+                      },
+                      "firstName": {
+                        "type": "string"
+                      },
+                      "lastName": {
+                        "type": "string"
+                      },
+                      "email": {
+                        "type": "string"
+                      },
+                      "password": {
+                        "type": "string"
+                      },
+                      "phone": {
+                        "type": "string"
+                      },
+                      "userStatus": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "User Status"
+                      }
+                    },
+                    "type": "object",
+                    "xml": {
+                      "name": "User"
+                    }
+                  }
+                }
+              },
+              "consumes": []
+            },
+            {
+              "schemes": [
+                "http"
+              ],
+              "host": "petstore.swagger.io",
+              "path": "/v2/user/{username}",
+              "op": "GET",
+              "body": {},
+              "query": {},
+              "formData": {},
+              "expected": {
+                "statusCode": "400",
+                "res": {
+                  "description": "Invalid username supplied"
+                }
+              },
+              "consumes": []
+            },
+            {
+              "schemes": [
+                "http"
+              ],
+              "host": "petstore.swagger.io",
+              "path": "/v2/user/{username}",
+              "op": "GET",
+              "body": {},
+              "query": {},
+              "formData": {},
+              "expected": {
+                "statusCode": "404",
+                "res": {
+                  "description": "User not found"
+                }
+              },
+              "consumes": []
+            }
+          ]
+        },
+        {
+          "operationLevelDescription": "tests for PUT",
+          "transactions": [
+            {
+              "schemes": [
+                "http"
+              ],
+              "host": "petstore.swagger.io",
+              "path": "/v2/user/{username}",
+              "op": "PUT",
+              "body": {
+                "body": "{body}"
+              },
+              "query": {},
+              "formData": {},
+              "expected": {
+                "statusCode": "400",
+                "res": {
+                  "description": "Invalid user supplied"
+                }
+              },
+              "consumes": []
+            },
+            {
+              "schemes": [
+                "http"
+              ],
+              "host": "petstore.swagger.io",
+              "path": "/v2/user/{username}",
+              "op": "PUT",
+              "body": {
+                "body": "{body}"
+              },
+              "query": {},
+              "formData": {},
+              "expected": {
+                "statusCode": "404",
+                "res": {
+                  "description": "User not found"
+                }
+              },
+              "consumes": []
+            }
+          ]
+        },
+        {
+          "operationLevelDescription": "tests for DELETE",
+          "transactions": [
+            {
+              "schemes": [
+                "http"
+              ],
+              "host": "petstore.swagger.io",
+              "path": "/v2/user/{username}",
+              "op": "DELETE",
+              "body": {},
+              "query": {},
+              "formData": {},
+              "expected": {
+                "statusCode": "400",
+                "res": {
+                  "description": "Invalid username supplied"
+                }
+              },
+              "consumes": []
+            },
+            {
+              "schemes": [
+                "http"
+              ],
+              "host": "petstore.swagger.io",
+              "path": "/v2/user/{username}",
+              "op": "DELETE",
+              "body": {},
+              "query": {},
+              "formData": {},
+              "expected": {
+                "statusCode": "404",
+                "res": {
+                  "description": "User not found"
+                }
+              },
+              "consumes": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

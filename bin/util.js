@@ -15,19 +15,18 @@
 'use strict';
 
 module.exports = {
-    sep: sep,
-    optionError: optionError
+  sep: sep,
+  optionError: optionError
 }
 
 function sep(list) {
-    var sep = list.split(',')
-    sep.forEach(function(s, ndx, arr) {
-        arr[ndx] = s.trim()
-    });
+  var sep = list.split(',')
+  sep.forEach(function (s, ndx, arr) {
+    arr[ndx] = s.trim()
+  });
 
-    return sep
+  return sep
 }
-
 
 function optionError(message) {
   console.error(message);

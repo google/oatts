@@ -18,52 +18,54 @@ var mocha = require('mocha')
 var util = require('util')
 var fullProcessed = require('./documents/fullProcessed.json')
 
-describe('compile', function() {
-    describe('no options', function() {
-        it ('should compile all processed correctly', function(done) {
-            try {
-                var tests = compile(fullProcessed, {})
-            
-                expect(tests).to.not.be.null
-                tests.forEach(function(test, ndx, arr) {
-                    expect(test).to.have.property('filename')
-                    expect(test).to.have.property('contents')
-                });
+describe('compile', function () {
+  describe('no options', function () {
+    it('should compile all processed correctly', function (done) {
+      try {
+        var tests = compile(fullProcessed, {})
 
-                done()
-            } catch(err) {
-                done(err)
-            }
-        })
+        expect(tests).to.not.be.null
+        tests.forEach(function (test, ndx, arr) {
+          expect(test).to.have.property('filename')
+          expect(test).to.have.property('contents')
+        });
 
-        it ('should return null', function(done) {
-            try {
-                var tests = compile({'tests': []}, {})
-                
-                expect(tests).to.be.null
-
-                done()
-            } catch(err) {
-                done(err)
-            }
-        })
+        done()
+      } catch (err) {
+        done(err)
+      }
     })
 
-    describe('custom templates option', function() {
-        it('should compile all processed correctly into custom templates', function(done) {
-            try {
-                var tests = compile(fullProcessed, {'templates': __dirname+'/documents/customTemplates'})
+    it('should return null', function (done) {
+      try {
+        var tests = compile({'tests': []}, {})
 
-                expect(tests).to.not.be.null
-                tests.forEach(function(test, ndx, arr) {
-                    expect(test).to.have.property('filename')
-                    expect(test).to.have.property('contents')
-                })
+        expect(tests).to.be.null
 
-                done()
-            } catch(err) {
-                done(err)
-            }
-        })
+        done()
+      } catch (err) {
+        done(err)
+      }
     })
+  })
+
+  describe('custom templates option', function () {
+    it('should compile all processed correctly into custom templates',
+        function (done) {
+          try {
+            var tests = compile(fullProcessed,
+                {'templates': __dirname + '/documents/customTemplates'})
+
+            expect(tests).to.not.be.null
+            tests.forEach(function (test, ndx, arr) {
+              expect(test).to.have.property('filename')
+              expect(test).to.have.property('contents')
+            })
+
+            done()
+          } catch (err) {
+            done(err)
+          }
+        })
+  })
 })
