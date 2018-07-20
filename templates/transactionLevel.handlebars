@@ -8,7 +8,7 @@ it('{{testLevelDescription}}', function() {
             });
 
             {{#if (isNotDefaultStatusCode expected.statusCode)}}
-            expect(response).to.have.status({{expected.statusCode}})
+            expect(response).to.have.status({{expected.statusCode}});
             {{/if}}
             {{#if expected.res}}
             {{#if hasValue}}
