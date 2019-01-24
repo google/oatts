@@ -60,14 +60,14 @@ function generate(specPath, options) {
             fs.mkdirSync(options.writeTo)
           }
 
-          compiled.forEach(function (testObj, ndx, arr) {
-            fs.writeFile(join(options.writeTo, testObj.filename),
-                testObj.contents, function (err) {
-                  if (err !== null) {
-                    console.error(err)
-                  }
-                })
-          })
+          try {
+            for (var i = 0; i < compiled.length; i++) {
+              const testObj = compiled[i];
+              fs.writeFileSync(join(options.writeTo, testObj.filename), testObj.contents)
+            }
+          } catch (err) {
+            console.log(err);
+          }
         }
 
         return {'generated': compiled}
