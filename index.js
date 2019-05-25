@@ -40,7 +40,13 @@ module.exports = {
  * @return {Promise<GenerationResults>}
  */
 function generate(specPath, options) {
-  return sway.create({'definition': specPath})
+  return sway.create({
+    'definition': specPath,
+    'jsonRefs': options && options.jsonRefs,
+    'customFormats': options && options.customFormats,
+    'customFormatGenerators': options && options.customFormatGenerators,
+    'customValidators': options && options.customValidators
+  })
       .then(function (api) {
         if (options.customValues) {
           options.customValues = JSON.parse(options.customValues);
