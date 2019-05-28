@@ -58,7 +58,7 @@ var helpers = require('./handlebar-helpers')
 var fs = require('fs')
 var path = require('path')
 
-var DefaultTemplateDirectory = path.join( __dirname , '..', 'templates'); 
+var DefaultTemplateDirectory = path.join(__dirname, '..', 'templates');
 var TopLevelTemplateName = 'topLevel.handlebars';
 var PathTemplateName = 'pathLevel.handlebars';
 var OperationTemplateName = 'operationLevel.handlebars';
@@ -72,7 +72,8 @@ module.exports = compile
 
 handlebars.registerHelper('notEmptyObject', helpers.notEmptyObject)
 handlebars.registerHelper('json', helpers.json)
-handlebars.registerHelper('isNotDefaultStatusCode', helpers.isNotDefaultStatusCode)
+handlebars.registerHelper('isNotDefaultStatusCode',
+    helpers.isNotDefaultStatusCode)
 
 /**
  * GeneratedTest is the set of results from procressing a spec &amp; compiling the test code
@@ -92,24 +93,24 @@ handlebars.registerHelper('isNotDefaultStatusCode', helpers.isNotDefaultStatusCo
  * @return {compilation.GeneratedTest[]}
  */
 function compile(processed, options) {
-    var tests = []
+  var tests = []
 
-    processed.tests.forEach(function(processedPath, ndx, arr) {
-        var pathTest = compilePathLevel(processedPath, processed, options)
+  processed.tests.forEach(function (processedPath, ndx, arr) {
+    var pathTest = compilePathLevel(processedPath, processed, options)
 
-        if (pathTest !== null) {
-            tests.push({
-                'filename': processedPath.name + '-test.js',
-                'contents': pathTest
-            })
-        }
-    });
-
-    if (tests.length === 0) {
-        return null
+    if (pathTest !== null) {
+      tests.push({
+        'filename': processedPath.name + '-test.js',
+        'contents': pathTest
+      })
     }
+  });
 
-    return tests
+  if (tests.length === 0) {
+    return null
+  }
+
+  return tests
 }
 
 /**
@@ -130,38 +131,37 @@ function compile(processed, options) {
  * @return {compilation.GeneratedPath}
  */
 function compilePathLevel(processedPath, processed, options) {
-    var tests = []
-    var requireLevelCompiler = prepareTemplate(
-        path.join(
-            options.templates ? options.templates : DefaultTemplateDirectory,
-            TopLevelTemplateName
-        )
-    )
+  var tests = []
+  var requireLevelCompiler = prepareTemplate(
+      path.join(
+          options.templates ? options.templates : DefaultTemplateDirectory,
+          TopLevelTemplateName
+      )
+  )
 
-    var pathLevelCompiler = prepareTemplate(
-        path.join(
-            options.templates ? options.templates : DefaultTemplateDirectory,
-            PathTemplateName
-        )
-    )
-    
+  var pathLevelCompiler = prepareTemplate(
+      path.join(
+          options.templates ? options.templates : DefaultTemplateDirectory,
+          PathTemplateName
+      )
+  )
 
-    processedPath.operations.forEach(function(processedOp, ndx, arr) {
-        var opLevelTest = compileOperationLevel(processedOp, processedPath, processed, options)
+  processedPath.operations.forEach(function (processedOp, ndx, arr) {
+    var opLevelTest = compileOperationLevel(processedOp, processedPath,
+        processed, options)
 
-        if (opLevelTest !== null) {
-            tests.push(opLevelTest)
-        }
-    })
-    
-    var pathLevelDescribe = pathLevelCompiler({
-        'pathLevelDescription': processedPath.pathLevelDescription,
-        'tests': tests
-    })
+    if (opLevelTest !== null) {
+      tests.push(opLevelTest)
+    }
+  })
 
-    return requireLevelCompiler({'test': pathLevelDescribe})
+  var pathLevelDescribe = pathLevelCompiler({
+    'pathLevelDescription': processedPath.pathLevelDescription,
+    'tests': tests
+  })
+
+  return requireLevelCompiler({'test': pathLevelDescribe})
 }
-
 
 /**
  * GeneratedOp is the result of procressing an operation &amp; compiling the operation-level test code
@@ -183,24 +183,25 @@ function compilePathLevel(processedPath, processed, options) {
  * @return {compilation.GeneratedOp}
  */
 function compileOperationLevel(processedOp, processedPath, processed, options) {
-    var tests = []
-    var operationLevelCompiler = prepareTemplate(
-        path.join(
-            options.templates ? options.templates : DefaultTemplateDirectory,
-            OperationTemplateName
-        )
-    )
+  var tests = []
+  var operationLevelCompiler = prepareTemplate(
+      path.join(
+          options.templates ? options.templates : DefaultTemplateDirectory,
+          OperationTemplateName
+      )
+  )
 
-    processedOp.transactions.forEach(function(transaction, ndx, arr) {
-        var transactionTest = compileTransactionLevel(transaction, processedOp, processedPath, processed, options)
+  processedOp.transactions.forEach(function (transaction, ndx, arr) {
+    var transactionTest = compileTransactionLevel(transaction, processedOp,
+        processedPath, processed, options)
 
-        tests.push(transactionTest)
-    })
-    
-    return operationLevelCompiler({
-        'operationLevelDescription': processedOp.operationLevelDescription,
-        'operationLevelTests': tests
-    })
+    tests.push(transactionTest)
+  })
+
+  return operationLevelCompiler({
+    'operationLevelDescription': processedOp.operationLevelDescription,
+    'operationLevelTests': tests
+  })
 }
 
 /**
@@ -221,15 +222,16 @@ function compileOperationLevel(processedOp, processedPath, processed, options) {
  * @param {object} options for use in test compilation
  * @return {compilation.GeneratedTransaction}
  */
-function compileTransactionLevel(transaction, processedOp, processedPath, processed, options) {
-    var transactionCompiler = prepareTemplate(
-        path.join(
-            options.templates ? options.templates : DefaultTemplateDirectory,
-            TransactionTemplateName
-        )
-    )
+function compileTransactionLevel(transaction, processedOp, processedPath,
+    processed, options) {
+  var transactionCompiler = prepareTemplate(
+      path.join(
+          options.templates ? options.templates : DefaultTemplateDirectory,
+          TransactionTemplateName
+      )
+  )
 
-    return transactionCompiler(transaction)
+  return transactionCompiler(transaction)
 }
 
 /**
@@ -241,8 +243,8 @@ function compileTransactionLevel(transaction, processedOp, processedPath, proces
  * @return {function}
  */
 function prepareTemplate(templatePath) {
-    var source = fs.readFileSync(templatePath, 'utf8');
-    return handlebars.compile(source, {noEscape:true})
+  var source = fs.readFileSync(templatePath, 'utf8');
+  return handlebars.compile(source, {noEscape: true})
 }
 </code></pre>
         </article>
@@ -256,7 +258,7 @@ function prepareTemplate(templatePath) {
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri May 18 2018 10:10:23 GMT-0700 (PDT) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a> on Tue May 28 2019 13:54:41 GMT-0700 (Pacific Daylight Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
