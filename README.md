@@ -135,6 +135,10 @@ The following options can be passed to the generation function, some/all are exp
 | `scheme` | `--scheme -m` | `spec.schemes[0]` | `false` | Override for multiple scheme present in a spec |
 | `templates` | `--templates -t` | `'./templates'` | `false` | Path to directory containing custom templates |
 | `statusCodes` |`--status-codes -S` | `operation.responses` | `false` | comma separated list of status codes to explicity generate tests for |
+| `jsonRefs` | | n/a | `false` | *(See [JsonRefs~JsonRefsOptions](https://github.com/whitlockjc/json-refs/blob/master/docs/API.md#module_JsonRefs..JsonRefsOptions))* |
+| `customFormats` | | n/a | `false` | The key/value pair of custom formats *(The keys are the format name and the values are async functions.  See [ZSchema Custom Formats](https://github.com/zaggino/z-schema#register-a-custom-format))* |
+| `customFormatGenerators` | | n/a | `false` | The key/value pair of custom format generators *(The keys are the format name and the values are functions.  See [json-schema-mocker Custom Format](https://github.com/json-schema-faker/json-schema-faker#custom-formats))* |
+| `customValidators` | | n/a | `false` | The custom validators. See [DocumentValidationFunction](https://github.com/apigee-127/sway/blob/master/docs/API.md#module_sway.DocumentValidationFunction) |
 
 ## Testing
 
