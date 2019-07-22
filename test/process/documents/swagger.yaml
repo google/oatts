@@ -97,6 +97,7 @@ paths:
         description: "Status values that need to be considered for filter"
         required: true
         type: "array"
+        example: ["pending"]
         items:
           type: "string"
           enum:
@@ -151,6 +152,11 @@ paths:
         required: true
         type: "integer"
         format: "int64"
+        examples:
+          two:
+            value: 2
+          five:
+            value: 5
     get:
       tags:
         - "pet"
@@ -186,11 +192,13 @@ paths:
           description: "Updated name of the pet"
           required: false
           type: "string"
+          example: "Rantanplan"
         - name: "status"
           in: "formData"
           description: "Updated status of the pet"
           required: false
           type: "string"
+          example: "sold"
       responses:
         405:
           description: "Invalid input"
@@ -210,6 +218,7 @@ paths:
         required: false
         type: "string"
         default: ""
+        example: "test_api_key"
       responses:
         400:
           description: "Invalid pet value"

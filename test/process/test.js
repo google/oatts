@@ -167,6 +167,27 @@ describe('process', function () {
           }
         })
 
+    it('should process \'/pet/findByStatus\' correctly with in-line example query param',
+        function (done) {
+          try {
+            var data = process(api, {
+              'paths': ['/pet/findByStatus']
+            })
+
+            expect(data).to.not.be.null
+            expect(data.host).to.equal("petstore.swagger.io",
+                "host property did not match the spec")
+            expect(data.scheme).to.equal("http")
+            expect(data.tests).to.not.be.empty
+             expect(
+                data.tests[0].operations[0].transactions[0].query).to.deep.equal(
+                 {status: ['pending']})
+            done()
+          } catch (err) {
+            done(err)
+          }
+        })
+
     it('should process \'/pet\' correctly with custom body params from a file',
         function (done) {
           try {
@@ -221,6 +242,29 @@ describe('process', function () {
           }
         })
 
+    it('should process \'/pet/{petId}\' with in-line example path and formData param',
+        function (done) {
+          try {
+            var data = process(api, {
+              'paths': ['/pet/{petId}']
+            })
+
+            expect(data).to.not.be.null
+            expect(data.host).to.equal("petstore.swagger.io",
+                "host property did not match the spec")
+            expect(data.scheme).to.equal("http")
+            expect(data.tests).to.not.be.empty
+            expect(
+                data.tests[0].operations[0].transactions[0].path).to.equal('/v2/pet/'
+            + 2)
+          expect(data.tests[0].operations[1].transactions[0].formData).to.deep.equal(
+              { name: 'Rantanplan', status: 'sold' })
+            done()
+          } catch (err) {
+            done(err)
+          }
+        })
+
     it('should process /pet/{petId} correctly with header params',
         function (done) {
           try {
@@ -239,6 +283,26 @@ describe('process', function () {
             done(err)
           }
         })
+
+      it('should process /pet/{petId} correctly with in-line example header params',
+          function (done) {
+              try {
+                  var data = process(api, {
+                      'paths': ['/pet/{petId}']
+                  })
+
+                  expect(data).to.not.be.null
+                  expect(data.tests).to.not.be.empty
+                  expect(
+                      data.tests[0].operations[2].transactions[0].headers).to.have.property(
+                      'api_key')
+                  expect(
+                      data.tests[0].operations[2].transactions[0].headers['api_key']).to.equal('test_api_key')
+                  done()
+              } catch (err) {
+                  done(err)
+              }
+          })
 
     it('should only process /pet 405 tests', function (done) {
       try {
