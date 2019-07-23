@@ -95,6 +95,17 @@
           "petId": 321
         }
       }
+    },
+    "post": {
+      "405": {
+        "path": {
+          "petId": 321
+        },
+        "formData": {
+          "name": null,
+          "status": "pending"
+        }
+      }
     }
   }
 }
