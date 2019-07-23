@@ -188,6 +188,31 @@ describe('process', function () {
           }
         })
 
+      it('should process \'/pet/{petId}/uploadImage\' correctly with in-line null example formData param',
+          function (done) {
+              try {
+                  var data = process(api, {
+                      'paths': ['/pet/{petId}/uploadImage']
+                  })
+
+                  expect(data).to.not.be.null
+                  expect(data.host).to.equal("petstore.swagger.io",
+                      "host property did not match the spec")
+                  expect(data.scheme).to.equal("http")
+                  expect(data.tests).to.not.be.empty
+                  expect(
+                      data.tests[0].operations[0].transactions[0].path).to.equal('/v2/pet/'
+                      + 5 + '/uploadImage')
+                  expect(
+                      data.tests[0].operations[0].transactions[0].query).to.deep.equal(
+                      {})
+
+                  done()
+              } catch (err) {
+                  done(err)
+              }
+          })
+
     it('should process \'/pet\' correctly with custom body params from a file',
         function (done) {
           try {
@@ -234,8 +259,9 @@ describe('process', function () {
                 + customVals['/pet/{petId}']['get']['path']['petId'])
             expect(
                 data.tests[0].operations[1].transactions[0].path).to.equal('/v2/pet/'
-                + customVals['path']['petId'])
-
+                + customVals['/pet/{petId}']['post']['405']['path']['petId'])
+              expect(
+                  data.tests[0].operations[1].transactions[0].formData).to.deep.equal({status: 'pending'})
             done()
           } catch (err) {
             done(err)
