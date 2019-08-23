@@ -191,7 +191,7 @@ describe('process', function () {
           }
         })
 
-      it('should process \'/pet/findByStatus\' correctly with in-line customValue-query',
+      it('should process \'/pet/findByStatus\' correctly with in-line example query param',,
       function (done) {
         try {
           var data = process(api, {
