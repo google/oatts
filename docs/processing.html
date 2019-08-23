@@ -22,7 +22,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="compilation.html">compilation</a><ul class='methods'><li data-type='method'><a href="compilation.html#compile">compile</a></li><li data-type='method'><a href="compilation.html#compileOperationLevel">compileOperationLevel</a></li><li data-type='method'><a href="compilation.html#compilePathLevel">compilePathLevel</a></li><li data-type='method'><a href="compilation.html#compileTransactionLevel">compileTransactionLevel</a></li><li data-type='method'><a href="compilation.html#prepareTemplate">prepareTemplate</a></li></ul></li><li><a href="processing.html">processing</a><ul class='methods'><li data-type='method'><a href="processing.html#determineQueryType">determineQueryType</a></li><li data-type='method'><a href="processing.html#isNumberType">isNumberType</a></li><li data-type='method'><a href="processing.html#lookupCustomValue">lookupCustomValue</a></li><li data-type='method'><a href="processing.html#pathify">pathify</a></li><li data-type='method'><a href="processing.html#process">process</a></li><li data-type='method'><a href="processing.html#processHeaders">processHeaders</a></li><li data-type='method'><a href="processing.html#processOperations">processOperations</a></li><li data-type='method'><a href="processing.html#processParams">processParams</a></li><li data-type='method'><a href="processing.html#processPaths">processPaths</a></li><li data-type='method'><a href="processing.html#processResponse">processResponse</a></li><li data-type='method'><a href="processing.html#processTransactions">processTransactions</a></li><li data-type='method'><a href="processing.html#replaceNewlines">replaceNewlines</a></li></ul></li><li><a href="templateHelpers.html">templateHelpers</a><ul class='methods'><li data-type='method'><a href="templateHelpers.html#isNotDefaultStatusCode">isNotDefaultStatusCode</a></li><li data-type='method'><a href="templateHelpers.html#json">json</a></li><li data-type='method'><a href="templateHelpers.html#notEmptyObject">notEmptyObject</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html">generate</a></li><li><a href="global.html">merge2</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="compilation.html">compilation</a><ul class='methods'><li data-type='method'><a href="compilation.html#compile">compile</a></li><li data-type='method'><a href="compilation.html#compileOperationLevel">compileOperationLevel</a></li><li data-type='method'><a href="compilation.html#compilePathLevel">compilePathLevel</a></li><li data-type='method'><a href="compilation.html#compileTransactionLevel">compileTransactionLevel</a></li><li data-type='method'><a href="compilation.html#prepareTemplate">prepareTemplate</a></li></ul></li><li><a href="processing.html">processing</a><ul class='methods'><li data-type='method'><a href="processing.html#determineQueryType">determineQueryType</a></li><li data-type='method'><a href="processing.html#isNumberType">isNumberType</a></li><li data-type='method'><a href="processing.html#lookupCustomQueryValue">lookupCustomQueryValue</a></li><li data-type='method'><a href="processing.html#lookupCustomValue">lookupCustomValue</a></li><li data-type='method'><a href="processing.html#pathify">pathify</a></li><li data-type='method'><a href="processing.html#process">process</a></li><li data-type='method'><a href="processing.html#processHeaders">processHeaders</a></li><li data-type='method'><a href="processing.html#processOperations">processOperations</a></li><li data-type='method'><a href="processing.html#processParams">processParams</a></li><li data-type='method'><a href="processing.html#processPaths">processPaths</a></li><li data-type='method'><a href="processing.html#processResponse">processResponse</a></li><li data-type='method'><a href="processing.html#processTransactions">processTransactions</a></li><li data-type='method'><a href="processing.html#replaceNewlines">replaceNewlines</a></li></ul></li><li><a href="templateHelpers.html">templateHelpers</a><ul class='methods'><li data-type='method'><a href="templateHelpers.html#isNotDefaultStatusCode">isNotDefaultStatusCode</a></li><li data-type='method'><a href="templateHelpers.html#json">json</a></li><li data-type='method'><a href="templateHelpers.html#notEmptyObject">notEmptyObject</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html">generate</a></li><li><a href="global.html">merge2</a></li></ul>
 </nav>
 
 <div id="main">
@@ -132,7 +132,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lib_process.js.html">lib/process.js</a>, <a href="lib_process.js.html#line506">line 506</a>
+        <a href="lib_process.js.html">lib/process.js</a>, <a href="lib_process.js.html#line538">line 538</a>
     </li></ul></dd>
     
 
@@ -283,7 +283,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lib_process.js.html">lib/process.js</a>, <a href="lib_process.js.html#line493">line 493</a>
+        <a href="lib_process.js.html">lib/process.js</a>, <a href="lib_process.js.html#line525">line 525</a>
     </li></ul></dd>
     
 
@@ -409,6 +409,249 @@
     <dd>
         
 <span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="lookupCustomQueryValue"><span class="type-signature"></span>lookupCustomQueryValue<span class="signature">(location, code, op, path, options)</span><span class="type-signature"> &rarr; {any}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="lib_process.js.html">lib/process.js</a>, <a href="lib_process.js.html#line347">line 347</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    resolves any custom query values available for the given operation and path
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>location</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">where the parameter is in the request/response</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>code</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">response status code being evaluated</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>op</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the operation method being processed</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>path</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">API path being processed</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">for use in looking up the custom value</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">any</span>
 
 
     </dd>
@@ -700,7 +943,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lib_process.js.html">lib/process.js</a>, <a href="lib_process.js.html#line470">line 470</a>
+        <a href="lib_process.js.html">lib/process.js</a>, <a href="lib_process.js.html#line502">line 502</a>
     </li></ul></dd>
     
 
@@ -1074,7 +1317,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lib_process.js.html">lib/process.js</a>, <a href="lib_process.js.html#line347">line 347</a>
+        <a href="lib_process.js.html">lib/process.js</a>, <a href="lib_process.js.html#line379">line 379</a>
     </li></ul></dd>
     
 
@@ -1954,7 +2197,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lib_process.js.html">lib/process.js</a>, <a href="lib_process.js.html#line432">line 432</a>
+        <a href="lib_process.js.html">lib/process.js</a>, <a href="lib_process.js.html#line464">line 464</a>
     </li></ul></dd>
     
 
@@ -2417,7 +2660,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lib_process.js.html">lib/process.js</a>, <a href="lib_process.js.html#line525">line 525</a>
+        <a href="lib_process.js.html">lib/process.js</a>, <a href="lib_process.js.html#line557">line 557</a>
     </li></ul></dd>
     
 
@@ -2570,7 +2813,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lib_process.js.html">lib/process.js</a>, <a href="lib_process.js.html#line423">line 423</a>
+        <a href="lib_process.js.html">lib/process.js</a>, <a href="lib_process.js.html#line455">line 455</a>
     </li></ul></dd>
     
 
@@ -3829,7 +4072,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Tue Jul 23 2019 10:14:52 GMT+0200 (Paris, Madrid (heure d’été)) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Fri Aug 23 2019 21:56:23 GMT+0100 (Western European Summer Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
