@@ -173,6 +173,9 @@ describe('process', function () {
             var data = process(api, {
               'customValues': {
                 '/pet/findByStatus': {
+                  'query': { 
+                    petName: 'some other name' 
+                  },
                   'get': {
                     'query': { 
                       petName: 'your pet name here <3' 
