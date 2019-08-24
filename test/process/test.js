@@ -172,7 +172,13 @@ describe('process', function () {
           try {
             var data = process(api, {
               'customValues': {
-                query: { petName: 'your pet name here <3' }
+                '/pet/findByStatus': {
+                  'get': {
+                    'query': { 
+                      petName: 'your pet name here <3' 
+                    }
+                  }
+                }
               },
               'paths': ['/pet/findByStatus']
             })
