@@ -167,10 +167,22 @@ describe('process', function () {
           }
         })
 
-    it('should process \'/pet/findByStatus\' correctly with in-line example query param',
+    it('should process \'/pet/findByStatus\' correctly with in-line example query param, with explicit exclusion',
         function (done) {
           try {
             var data = process(api, {
+              'customValues': {
+                '/pet/findByStatus': {
+                  'query': { 
+                    petName: 'some other name' 
+                  },
+                  'get': {
+                    'query': { 
+                      petName: 'your pet name here <3' 
+                    }
+                  }
+                }
+              },
               'paths': ['/pet/findByStatus']
             })
 
@@ -181,12 +193,33 @@ describe('process', function () {
             expect(data.tests).to.not.be.empty
              expect(
                 data.tests[0].operations[0].transactions[0].query).to.deep.equal(
-                 {status: ['pending']})
+                 {petName: 'your pet name here <3'})
             done()
           } catch (err) {
             done(err)
           }
         })
+
+      it('should process \'/pet/findByStatus\' correctly with in-line example query param',
+      function (done) {
+        try {
+          var data = process(api, {
+            'paths': ['/pet/findByStatus']
+          })
+
+          expect(data).to.not.be.null
+          expect(data.host).to.equal("petstore.swagger.io",
+              "host property did not match the spec")
+          expect(data.scheme).to.equal("http")
+          expect(data.tests).to.not.be.empty
+            expect(
+              data.tests[0].operations[0].transactions[0].query).to.deep.equal(
+                {status: ['pending'], petName: 'toto'})
+          done()
+        } catch (err) {
+          done(err)
+        }
+      })
 
       it('should process \'/pet/{petId}/uploadImage\' correctly with in-line null example formData param',
           function (done) {

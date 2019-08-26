@@ -106,6 +106,12 @@ paths:
           - "sold"
           default: "available"
         collectionFormat: "multi"
+      - name: "petName"
+        in: "query"
+        description: "petName value that can be considered for filter"
+        required: false
+        type: "string"
+        example: "toto"
       responses:
         200:
           description: "successful operation"
