@@ -399,5 +399,73 @@ describe('process', function () {
         done(err)
       }
     })
+
+    it("should process '/pet/{petId}' with -p option to contain all operations and process '/pet' with -P option to contain only POST operation", function(done) {
+      try {
+        var data = process(api, { pathsWithOperations: ["/pet_post"], paths: ["/pet/{petId}"] });
+        expect(data).to.not.be.null;
+        expect(data.scheme).to.equal("http");
+        expect(data.consumes).to.be.empty;
+        expect(data.tests.length).to.equal(
+          2,
+          "returned tests set was expected to have 2 item, but it had " +
+            data.tests.length
+        );
+        expect(data.tests[0].operations.length).to.equal(
+          3,
+          "/pet/{petId} path was expected to have 3 operation, but it had " +
+          data.tests[0].operations.length
+        );
+        expect(data.tests[1].operations.length).to.equal(
+          1,
+          "/pet path was expected to have 1 operation, but it had " +
+          data.tests[1].operations.length
+        );
+        expect(data.tests[1].operations[0].operationLevelDescription).to.equal(
+          'tests for post',
+          "/pet path was expected to have post operation, but it had " +
+          data.tests[1].operations[0].operationLevelDescription
+        );
+        done();
+      } catch (err) {
+        done(err);
+      }
+    });
+    it("should process '/pet/{petId}' & '/pet' and contain only PUT and DELETE operataions respectively", function(done) {
+      try {
+        var data = process(api, { pathsWithOperations: ["/pet_put","/pet/{petId}_delete"] });
+        expect(data).to.not.be.null;
+        expect(data.scheme).to.equal("http");
+        expect(data.consumes).to.be.empty;
+        expect(data.tests.length).to.equal(
+          2,
+          "returned tests set was expected to have 2 item, but it had " +
+            data.tests.length
+        );
+        expect(data.tests[0].operations.length).to.equal(
+          1,
+          "/pet path was expected to have 1 operation, but it had " +
+          data.tests[0].operations.length
+        );
+        expect(data.tests[0].operations[0].operationLevelDescription).to.equal(
+          'tests for put',
+          "/pet path was expected to have put operation, but it had " +
+          data.tests[0].operations[0].operationLevelDescription
+        );
+        expect(data.tests[1].operations.length).to.equal(
+          1,
+          "/pet/{petId} path was expected to have 1 operation, but it had " +
+          data.tests[1].operations.length
+        );
+        expect(data.tests[1].operations[0].operationLevelDescription).to.equal(
+          'tests for delete',
+          "/pet/{petId} path was expected to have delete operation, but it had " +
+          data.tests[1].operations[0].operationLevelDescription
+        );
+        done();
+      } catch (err) {
+        done(err);
+      }
+    });
   })
 })

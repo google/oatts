@@ -58,19 +58,20 @@ Then use in your command line
 
   Options:
 
-    -h, --help                             output usage information
-    --host <host>                          target hostname to use in test generation
-    -p, --paths <paths>                    comma separated list of paths to generate tests for
-    -e, --samples                          generate sample response bodies rather than schema, if applicable
-    -s, --spec <spec>                      path to the target OpenAPI/Swagger spec document to consume
-    -w, --writeTo <writeTo>                directory to write the generated tests to file
-    -c, --consumes <consumes>              consumes/content-type to use in request when applicable to the API resource
-    -o, --produces <produces>              produces/accept to use in request when applicable to the API resource
-    -u, --customValues <customValues>      custom request values to be used in generation; takes precedent over a customValuesFile
-    --customValuesFile <customValuesFile>  path to JSON file with custom request values to be used in generation
-    -m, --scheme <scheme>                  which scheme to use if multiple are present in spec
-    -t --templates <templateDir>           path to direcotry of custom templates
-    -S, --status-codes <statusCodes>       comma separated list of status codes to explicity generate tests for
+    -h, --help                                      output usage information
+    --host <host>                                   target hostname to use in test generation
+    -p, --paths <paths>                             comma separated list of paths to generate tests for
+    -e, --samples                                   generate sample response bodies rather than schema, if applicable
+    -s, --spec <spec>                               path to the target OpenAPI/Swagger spec document to consume
+    -w, --writeTo <writeTo>                         directory to write the generated tests to file
+    -c, --consumes <consumes>                       consumes/content-type to use in request when applicable to the API resource
+    -o, --produces <produces>                       produces/accept to use in request when applicable to the API resource
+    -u, --customValues <customValues>               custom request values to be used in generation; takes precedent over a customValuesFile
+    --customValuesFile <customValuesFile>           path to JSON file with custom request values to be used in generation
+    -m, --scheme <scheme>                           which scheme to use if multiple are present in spec
+    -t --templates <templateDir>                    path to direcotry of custom templates
+    -S, --status-codes <statusCodes>                comma separated list of status codes to explicity generate tests for
+    -P, --pathsWithOperations <pathsWithOperations> comma separated list of paths with respective operations to generate tests for, where path and operations are separated by '_' delimiter
 
 > oatts generate -s ./path/to/openapi.yaml -w ./output/dir
 > ls ./output/dir
@@ -135,6 +136,7 @@ The following options can be passed to the generation function, some/all are exp
 | `scheme` | `--scheme -m` | `spec.schemes[0]` | `false` | Override for multiple scheme present in a spec |
 | `templates` | `--templates -t` | `'./templates'` | `false` | Path to directory containing custom templates |
 | `statusCodes` |`--status-codes -S` | `operation.responses` | `false` | comma separated list of status codes to explicity generate tests for |
+| `pathsWithOperations` | `--pathsWithOperations -P` | n/a | `false` | comma separated list of paths with respective operations to generate tests for, where path and operations are separated by '_' delimiter |
 | `jsonRefs` | | n/a | `false` | *(See [JsonRefs~JsonRefsOptions](https://github.com/whitlockjc/json-refs/blob/master/docs/API.md#module_JsonRefs..JsonRefsOptions))* |
 | `customFormats` | | n/a | `false` | The key/value pair of custom formats *(The keys are the format name and the values are async functions.  See [ZSchema Custom Formats](https://github.com/zaggino/z-schema#register-a-custom-format))* |
 | `customFormatGenerators` | | n/a | `false` | The key/value pair of custom format generators *(The keys are the format name and the values are functions.  See [json-schema-mocker Custom Format](https://github.com/json-schema-faker/json-schema-faker#custom-formats))* |

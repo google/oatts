@@ -50,6 +50,8 @@ cli.command('generate')
     .option('-S, --status-codes <statusCodes>',
         'comma separated list of status codes to explicity generate tests for',
         util.sep)
+    .option('-P, --pathsWithOperations <pathsWithOperations>',
+        'comma separated list of paths with respective operations to generate tests for, where path and operations are separated by "_" delimiter', util.sep)
     .action(function (options) {
       options.error = util.optionError;
       if (!options.spec) {
