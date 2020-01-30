@@ -1,5 +1,11 @@
 language: node_js
 node_js:
-  - "node"
-  - "lts/*"
-
+- node
+- lts/*
+deploy:
+  provider: npm
+  email: ndietz@google.com
+  api_key:
+    secure: D49wznP8jeJMkaGzRMuwcfv3xedLtUR0iTrZtbOjZ8oCgebOslIqDZMI192FWljX5qGlu21QlAfWyCsdQLP2O/WTBtAuZF7jojoZKhDjtM13b1381kFm2FHq00OxTyRFOKdIAE92G0tTZx7LG47auDEKg0bq+faBDzCU83uWAAZZbc2mOol0evZulzM2GWtmcOmJdv/ysAUpKruqH3jRHvtFebWcTJCfcHpSL7lx4AfLZaxjpIhrVIxOMpOrIibYkgRUVjG8/RJZYGabR7S2hssVVzI+qtXLnOsd+6thH/DwpAXgNvTt4nJnomdUJt4qXa5iKS/w/Wd0jD8STp0qKNBkg2mfh35OD0BAEr7ekg/KdQ2azFQSpnzhVyju5P5uahcI94A7LiWx/yJqmdzRb0EA4PdXQb2hUS4tscwgxKnw+mmpoC5UuCHZY5sUaVaLwGDdNFi61+71TEnPhOgRZahZXd1/5MInpkeEH//QAvX9HapSBWTzmLCd1WYMaam31o1LuXjBsXh5tE7nGSXHMg+5fgQFCn0Zh5Tdbi149EVOWLzmqIvO7wPFkAIr2rGKo3iVzR+2e8uKCNF0sidpDuG4eScAYdkDWRRtGM6uottJI7znitnuxpY+flBAuVS94aCJDkw4rSi7p31NO9M4slIVhAAGZHcWxMZfNrEnW2A=
+  on:
+    tags: true
