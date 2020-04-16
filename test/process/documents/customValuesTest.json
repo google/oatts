@@ -28,37 +28,70 @@
           "notanenum2"
         ]
       },
-      "200": {
-        "header": {
-          "StatusCodeShow": "statusCode",
-          "StatusCodeOverrideFromGlobal": "statusCode",
-          "StatusCodeOverrideFromPath": "statusCode",
-          "StatusCodeOverrideFromOp": "statusCode"
-        },
-        "query": {
-          "status": [
-            "notanenum3"
-          ]
-        },
-        "response": [
-          {
-            "name": "sparky",
-            "photoUrls": [
-              "url1",
-              "url2",
-              "url3"
+      "200": [
+        {
+          "header": {
+            "StatusCodeShow": "statusCode",
+            "StatusCodeOverrideFromGlobal": "statusCode",
+            "StatusCodeOverrideFromPath": "statusCode",
+            "StatusCodeOverrideFromOp": "statusCode"
+          },
+          "query": {
+            "status": [
+              "notanenum3"
             ]
           },
-          {
-            "name": "champ",
-            "photoUrls": [
-              "url4",
-              "url5",
-              "url6"
+          "response": [
+            {
+              "name": "sparky",
+              "photoUrls": [
+                "url1",
+                "url2",
+                "url3"
+              ]
+            },
+            {
+              "name": "champ",
+              "photoUrls": [
+                "url4",
+                "url5",
+                "url6"
+              ]
+            }
+          ]
+        },
+        {
+          "header": {
+            "StatusCodeShow": "statusCode",
+            "StatusCodeOverrideFromGlobal": "statusCode",
+            "StatusCodeOverrideFromPath": "statusCode",
+            "StatusCodeOverrideFromOp": "statusCode"
+          },
+          "query": {
+            "status": [
+              "notanenum4"
             ]
-          }
-        ]
-      },
+          },
+          "response": [
+            {
+              "name": "black",
+              "photoUrls": [
+                "url7",
+                "url8",
+                "url9"
+              ]
+            },
+            {
+              "name": "red",
+              "photoUrls": [
+                "url10",
+                "url11",
+                "url12"
+              ]
+            }
+          ]
+        }
+      ],
       "400": {
         "header": {
           "StatusCodeShow": "statusCode",
