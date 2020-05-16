@@ -23,14 +23,14 @@
   "author": "Noah Dietz",
   "license": "Apache-2.0",
   "dependencies": {
-    "commander": "^2.20.0",
-    "handlebars": "^4.1.2",
+    "commander": "^5.1.0",
+    "handlebars": "^4.7.6",
     "sway": "^2.0.6"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
-    "docdash": "^0.4.0",
-    "jsdoc": "^3.6.3",
-    "mocha": "^5.2.0"
+    "chai": "^4.2.0",
+    "docdash": "^1.2.0",
+    "jsdoc": "^3.6.4",
+    "mocha": "^7.1.2"
   }
 }
