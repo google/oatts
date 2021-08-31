@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/google/oatts.svg?branch=master)](https://travis-ci.org/google/oatts)
-
 # OpenAPI Test Templates (oatts)
 
 > Generate basic unit test scaffolding for your [OpenAPI specification](https://www.openapis.org/).
